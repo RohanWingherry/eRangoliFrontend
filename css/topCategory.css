@@ -155,11 +155,11 @@
       }
 
       .nav-arrow.left {
-        left: -1px;
+        left: 0px;
       }
 
       .nav-arrow.right {
-        right: -1px;
+        right: 0px;
       }
 
       /* Banner Section */
