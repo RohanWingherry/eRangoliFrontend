@@ -43,7 +43,7 @@
   position: relative;
   margin: 0 auto 0px auto;
   background-color: #ffffff;
-  padding: 30px 110px 65px;
+  padding: 30px 30px 65px;
   border-radius: 0px;          
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
 }
@@ -156,11 +156,11 @@
       }
 
       .nav-arrow.left {
-        left: 40px;
+        left: 0px;
       }
 
       .nav-arrow.right {
-        right: 40px;
+        right: 0px;
       }
 
       /* Banner Section */
@@ -288,7 +288,7 @@
 
 /* Main Banner Area */
 .state-background {
-  padding: 0 110px;   
+  padding: 0 30px;   
 }
 
 .state-carousel {
@@ -330,7 +330,7 @@
   
   width: 360px;
   padding: 28px 26px 26px;
-  border-radius: 14px;
+  border-radius: 5px;
 
   background: linear-gradient(
     135deg,
@@ -448,7 +448,7 @@
       /* Exclusive Products Section */
 .products-section {
   margin: 40px 0 60px;   
-  padding: 0 110px;      
+  padding: 0 30px;      
 }
 
       .products-container {
@@ -468,11 +468,11 @@
         transition: transform 0.3s ease;
       }
       .products-container .nav-arrow.left {
-  left: -70px;   
+  left: -30px;   
 }
 
 .products-container .nav-arrow.right {
-  right: -70px;
+  right: -30px;
 }
 
 
@@ -621,7 +621,7 @@
       /* Traditional Marketplace Section */
       .traditional-wrapper {
   margin: 40px 0 60px;
-  padding: 0px 110px;
+  padding: 0px 30px;
   background-image: url(""); 
   background-size: cover;
   background-repeat: no-repeat;
