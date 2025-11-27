@@ -51,7 +51,7 @@
 
       .categories-wrapper {
         overflow: hidden;
-        overflow-y: visible;
+        /* overflow-y: visible; */
       }
 
       .categories-grid {
@@ -90,16 +90,18 @@
       .category-item {
         position: relative;
         min-width: 260px;
-        height: 206px;
+        height: auto;
         background-image: url("../assets/Group 5[1].png");
         border-radius: 10px;
         padding: 8px;
         flex-shrink: 0;
+        margin-bottom: 1.5rem;
+  
       }
 
       .shop-now-btn {
         position: absolute;
-        bottom: 0; 
+        bottom: -1rem;
         left: 50%;
         transform: translateX(-50%);
         background-color: #A10404;
@@ -117,12 +119,12 @@
       .shop-now-btn:hover {
         background-color: #a01729;
         transform: translateX(-50%) translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      
       }
 
 .nav-arrow {
   position: absolute;
-  top: 50%;
+  top: 58%;
   transform: translateY(-50%);
   width: 32px;
   height: 32px;
@@ -294,6 +296,7 @@
   max-width: 100%;
   border-radius: 14px;
   overflow: hidden;
+  height: 400px;
 }
 
 .state-slides {
@@ -337,10 +340,15 @@
   backdrop-filter: blur(8px);
 
 
-  border: 1px ;
+  border: 1px solid #C8BDB6 ;
 
   text-align: center;
   color: #ffffff;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
 }
 
 
@@ -473,7 +481,6 @@
   height: 282px;
   background-color: #FFFFFF;
   border-radius: 8px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
   border: 1px solid #C8BDB6;
   cursor: pointer;
   padding-bottom: 14px;
@@ -482,9 +489,6 @@
   flex-direction: column;
 }
 
-.product-card:hover {
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
-}
 
 
 .product-image {
@@ -565,6 +569,7 @@
   width: 32px;
   height: 32px;
   padding: 0;
+  top: 50%;
   box-shadow: none;
   display: flex;
   align-items: center;
@@ -624,6 +629,7 @@
 }
 .marketplace-section {
   background-image: url("../assets/traditionalimge.png");
+  background-color: rgba(185, 19, 19, 0.163);
   padding: 32px 40px;
   border-radius: 8px;
   display: flex;

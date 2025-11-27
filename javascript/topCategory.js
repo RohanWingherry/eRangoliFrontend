@@ -31,7 +31,12 @@ function updateCatSlider() {
 }
 
 function scrollCategories(direction) {
-  catIndex += direction;
+  const cardWidth = getCatCardWidth();
+  const visible = Math.floor(catGrid.parentElement.clientWidth / cardWidth);
+
+  // ek click par "visible" cards jump karo
+  catIndex += direction * visible;
+
   updateCatSlider();
 }
 
