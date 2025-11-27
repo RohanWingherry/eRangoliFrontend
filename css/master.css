@@ -7,6 +7,10 @@
     font-family: "Nunito Sans" ;
 }
 
+body{
+    background-image: url("../assets/backgroundimage.png");
+}
+
 nav{
     width: 100%;
     display: flex;
@@ -14,8 +18,10 @@ nav{
     justify-content: space-between;
     height: 75px;
     padding: 0px 30px;
-    position: sticky;
+    position: fixed;
     top: 0px;
+    z-index: 9999 !important;
+    background-color: white;
 }
 .logo-section{
     height: 55px;
@@ -59,26 +65,75 @@ nav{
 .round-button>img{
     height: 20px;
 }
-.signup-button{
+.signup-button {
     background-color: #A10404;
-    margin-left: 30px ;
+    margin-left: 30px;
     border-radius: 8px;
-}
-.signup-button{
     color: white;
     padding: 13px 39px;
     font-size: 16px;
     cursor: pointer;
     font-weight: 700;
+    white-space: nowrap;
+    border-bottom: 1px solid #D9D9D9;
+
+}
+.signup-wrapper {
+    position: relative;
+    display: inline-block;
+    z-index: 99999 !important; 
+}
+
+.signup-dropdown {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: white;
+    padding: 10px;
+    list-style: none;
+    border-radius: 6px;
+    width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.25s ease;
+    z-index: 999999 !important;
+}
+.signup-dropdown li {
+    padding: 10px 16px;
+    font-size: 14px;
+    color: #444;
+    cursor: pointer;
+    transition: 0.2s;
+    border-bottom: 1px solid #D9D9D9;
+
+}
+.signup-dropdown li:hover {
+    color: #A10404;
+    background: #EFDFDF;
+    border-radius: 4px;
+}
+.signup-wrapper:hover .signup-dropdown,
+.signup-dropdown:hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 
+
 /* Banner Section */
+
+.featured-brands{
+    background: white;
+}
 .carousel-container {
     width: 100%;
     height: 500px;
     overflow: hidden;
     position: relative;
+    z-index: 1;
+    margin-top: 75px;
 }
 
 .carousel-slide {
@@ -86,6 +141,7 @@ nav{
     width: 100%;
     height: 100%;
     transition: transform 0.5s ease-in-out;
+    z-index: 1;
 }
 
 .carousel-slide img {
@@ -93,13 +149,14 @@ nav{
     height: 100%;
     flex-shrink: 0;
     object-fit: cover;
+    z-index: 1;
 }
 
 /* Dots below the image */
 .dots {
     width: 100%;
     text-align: center;
-    margin-top: 15px;
+    padding-top: 15px;
 }
 
 .dot {
@@ -123,5 +180,239 @@ nav{
 @media (max-width: 420px) {
   .carousel-container { height: 200px; }
 }
+
+/* Banner section Content */
+
+.middle-nav-bar {
+    position: absolute;
+    z-index: 100;
+    left: 50%;
+    top: 100px;
+    transform: translate(-50%);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    padding: 5px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    /* Glass effect */
+    background: rgba(255, 255, 255, 0.034);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-item {
+    position: relative;
+    padding: 10px 0;
+    font-size: 16px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: Padauk;
+    text-wrap: nowrap;
+}
+
+/* SUBMENU (Initially hidden) */
+.dropdown {
+    position: absolute;
+    top: 55px;
+    left: 0;
+    background: white;
+    padding: 12px 0;
+    list-style: none;
+    border-radius: 6px;
+    width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px); 
+    transition: all 0.25s ease;
+    z-index: 9999;
+    padding: 10px 10px;
+}
+
+.dropdown li {
+    padding: 8px 16px 8px 8px;
+    font-size: 14px;
+    color: #444;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: 0.2s;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.dropdown li:hover {
+    color: #A10404;
+    background: #EFDFDF;
+    border-radius: 4px;
+
+}
+
+/* SHOW submenu on hover */
+.nav-item:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+.banner-main-content{
+    position: absolute;
+    z-index: 99;
+    top: 220px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.banner-heading{
+    font-size: 30px;
+    color: white;
+    font-weight: 500;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+.line{
+    border: 1px solid white;
+    width: 700px;
+}
+.small-para{
+    color: white;
+    font-size: 16px;
+    max-width: 600px;
+    text-align: center;
+}
+.banner-explore-btn{
+    margin-top: 15px;
+}
+.banner-explore-btn>button{
+    border: none;
+    padding: 10px 30px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.034);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Featured Brands */
+.featured-brands{
+    padding-top: 20px;
+    background-color: transparent;
+}
+.heading-tag-for-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.heading-tag-for-section>div{
+    font-size: 24px;
+    font-weight: 600;
+}
+.heading-tag-for-section .heading-line{
+    border: 1px solid #A10404;
+    width: 185px;
+}
+:root{
+  --logo-size:64px;
+  --gap:36px;
+  --speed-px-per-sec:50;
+}
+
+
+/* wrapper */
+.logo-marquee-wrap{
+    padding:20px 0px; 
+    display:flex; 
+    justify-content:center; 
+    background: transparent;
+}
+
+/* viewport (visible area) */
+.logo-marquee{
+    width:100%; 
+    background-color: transparent;
+}
+.marquee-viewport{
+    overflow:hidden; 
+    width:100%;
+}
+
+/* content row (will be duplicated) */
+.marquee-content{
+  display:flex;
+  gap:var(--gap);
+  align-items:center;
+  flex-wrap:nowrap;
+  animation-name: marquee;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+/* each logo item */
+.marquee-item{
+  flex:0 0 auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  min-width:100px;
+  user-select:none;
+}
+
+.marquee-item img{
+  width:var(--logo-size);
+  height:var(--logo-size);
+  object-fit:cover;
+  display:block;
+  margin-bottom:8px;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 2px 6px rgba(0,0,0,0.12);
+  cursor: pointer;
+}
+
+.brand-name{
+    font-size:12px;
+    color:#444;
+    white-space:nowrap
+}
+
+.logo-marquee:hover .marquee-content,
+.logo-marquee:focus-within .marquee-content{
+  animation-play-state:paused;
+}
+
+/* keyframes - translate by CSS variable --move px which JS sets */
+@keyframes marquee{
+  from{transform:translateX(0)}
+  to{transform:translateX(calc(var(--move) * -1))}
+}
+
+/* responsive tweaks */
+@media (max-width:900px){
+    :root{--logo-size:56px;--gap:28px}
+}
+@media (max-width:480px){
+    :root{--logo-size:44px;--gap:18px}
+}
+
+
 
 
