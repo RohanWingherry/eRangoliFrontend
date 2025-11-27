@@ -21,10 +21,10 @@ body::before {
   z-index: -1;
 }
 
-/*Category Section*/
+/*Christmas Section*/
 .category-section {
   width: 100%;
-  padding: 40px 0;
+  padding: 30px 0;
 }
 
 .category-heading {
@@ -74,16 +74,23 @@ body::before {
 
 .explore-btn {
   position: absolute;
-  bottom: 12px;
+  bottom: -60px;
   right: 12px;
   background: #fff;
   border: none;
-  padding: 7px 18px;
-  border-radius: 8px;
+  padding: 5px 25px;
+  border-radius: 4px;
   color: #a10404;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 400;
   cursor: pointer;
+  transition: bottom 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  opacity: 0;
+}
+
+.category-box:hover .explore-btn {
+  bottom: 12px;
+  opacity: 1;
 }
 
 /*Banner Section*/
@@ -191,7 +198,7 @@ body::before {
   margin: 0;
 }
 
-/* Section container */
+/* Experience Section */
 .features-section {
   width: 90%;
   max-width: 100%;
@@ -230,7 +237,8 @@ body::before {
   margin: auto;
 }
 
-.feature-icon {
+.feature-icon,
+.unique-icon {
   width: 80px;
   height: 80px;
   background: #f7eaea;
@@ -241,9 +249,15 @@ body::before {
   margin: 0 auto 15px;
 }
 
+.unique-icon img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
 .feature-icon img {
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
 }
 
@@ -264,4 +278,169 @@ body::before {
   line-height: 100%;
   letter-spacing: 0%;
   text-align: center;
+}
+
+/*Crafted Section*/
+
+.crafted-section {
+  width: 100%;
+  padding: 30px 0;
+}
+
+.crafted-heading {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.crafted-heading-underline {
+  width: 250px;
+  height: 4px;
+  background: #a10404;
+  margin: 0 auto 25px;
+  border-radius: 5px;
+}
+
+.crafted-grid {
+  width: 90%;
+  max-width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.7fr 1fr 1fr;
+  grid-template-rows: 230px 230px;
+  gap: 15px;
+}
+
+.crafted-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.crafted-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.big {
+  grid-row: span 2;
+}
+.big2 {
+  grid-column: span 2;
+}
+
+.crafted-label {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(2.5px);
+  backdrop-filter: blur(2.5px);
+  width: 149px;
+  height: 33px;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.crafted-explore-btn {
+  position: absolute;
+  bottom: -60px;
+  right: 12px;
+  background: #fff;
+  border: none;
+  padding: 5px 25px;
+  border-radius: 4px;
+  color: #a10404;
+  font-size: 24px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: bottom 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  opacity: 0;
+}
+
+.crafted-box:hover .crafted-explore-btn {
+  bottom: 12px;
+  opacity: 1;
+}
+
+/*Collection Section*/
+.collection-section {
+  width: 100%;
+  padding: 30px 0;
+}
+
+.collection-heading {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.collection-heading-underline {
+  width: 250px;
+  height: 4px;
+  background: #a10404;
+  margin: 0 auto 25px;
+  border-radius: 5px;
+}
+
+.collection-grid {
+  width: 90%;
+  max-width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.7fr 1fr 1fr;
+  grid-template-rows: 230px 230px;
+  gap: 15px;
+}
+
+.collection-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.collection-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.big {
+  grid-row: span 2;
+}
+.big2 {
+  grid-column: span 2;
+}
+
+.collection-explore-btn {
+  position: absolute;
+  bottom: -60px;
+  right: 12px;
+  background: #fff;
+  border: none;
+  padding: 5px 25px;
+  border-radius: 4px;
+  color: #a10404;
+  font-size: 24px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: bottom 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  opacity: 0;
+}
+
+.collection-box:hover .collection-explore-btn {
+  bottom: 12px;
+  opacity: 1;
 }
