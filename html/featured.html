@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Featured Sellers Slider</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Nunito Sans", sans-serif;
+    }
+
+    .fs-section {
+        padding: 30px 30px;
+        text-align: center;
+        width: 95%;
+    }
+
+    .fs-section h2 {
+        font-size: 28px;
+        font-weight: 600;
+    }
+
+    .fs-line {
+        width: 160px;
+        height: 3px;
+        background: #000;
+        margin: 10px auto 30px;
+    }
+
+    /* MAIN CONTAINER */
+    .fs-slider-container {
+        width: 100%;
+        max-width: 1900px;
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+        padding-bottom: 60px;
+
+        /* border: 1px solid black; */
+    }
+
+    /* WRAPPER */
+    .fs-wrapper {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+    }
+
+    /* EACH SLIDE = 3 ROWS OF FLEX */
+    .fs-slide {
+        min-width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 25px; /* ROW GAP */
+        padding: 10px 0;
+    }
+
+    /* FLEX ROW */
+    .fs-row {
+        display: flex;
+        justify-content: center;
+        gap: 50px; /* COLUMN GAP */
+    }
+
+    /* LOGO CARD */
+    .fs-card {
+        background: #f3dfe0;
+        border-radius: 4px;
+        max-width: 250px;
+        width: 100%;
+        height: 65px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fs-card img {
+        max-width: 240px;
+        width: 100%;
+        /* max-height: 63px; */
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .fs-card a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* BUTTONS */
+    .fs-btn {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        background: rgba(15,23,43,0.9);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 16px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 20;
+        opacity: 0.9;
+        transition: 0.3s ease;
+    }
+
+    .fs-btn:hover {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    .fs-prev {
+        right: 60px;
+    }
+
+    .fs-next {
+        right: 10px;
+    }
+</style>
+</head>
+<body>
+
+<section class="fs-section">
+    <h2>Featured Sellers</h2>
+    <div class="fs-line"></div>
+
+    <div class="fs-slider-container">
+
+        <!-- SLIDER BUTTONS -->
+        <button class="fs-btn fs-prev">❮</button>
+        <button class="fs-btn fs-next">❯</button>
+
+        <div class="fs-wrapper" id="fs-wrapper">
+
+            <!-- SLIDE 1 -->
+            <div class="fs-slide">
+
+                <!-- ROW 1 -->
+                <div class="fs-row">
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 1.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 2.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 3.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 1.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 2.png"></a></div>
+                </div>
+
+                <!-- ROW 2 -->
+                <div class="fs-row">
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 1.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 2.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 3.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 1.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 2.png"></a></div>
+                </div>
+
+                <!-- ROW 3 -->
+                <div class="fs-row">
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 1.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 2.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 3.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 1.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 2.png"></a></div>
+                </div>
+
+            </div>
+
+            <!-- SLIDE 2 -->
+            <div class="fs-slide">
+
+                <div class="fs-row">
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 1.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 2.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 3.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 1.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 2.png"></a></div>
+                </div>
+
+                <div class="fs-row">
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 1.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 2.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 3.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 1.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 2.png"></a></div>
+                </div>
+
+                <div class="fs-row">
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 1.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 2.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 3.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 1.png"></a></div>
+                    <div class="fs-card"><a href="#"><img src="../assets/logo 2.png"></a></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<script>
+    const fsWrapper = document.getElementById("fs-wrapper");
+    const fsSlides = document.querySelectorAll(".fs-slide");
+    let fsIndex = 0;
+
+    function fsSlide() {
+        fsIndex++;
+        if (fsIndex >= fsSlides.length) fsIndex = 0;
+        fsWrapper.style.transform = `translateX(-${fsIndex * 100}%)`;
+    }
+
+    let fsAutoSlide = setInterval(fsSlide, 3000);
+
+    // NEXT Button
+    document.querySelector(".fs-next").onclick = () => {
+        fsSlide();
+        fsRestart();
+    };
+
+    // PREV Button
+    document.querySelector(".fs-prev").onclick = () => {
+        fsIndex--;
+        if (fsIndex < 0) fsIndex = fsSlides.length - 1;
+        fsWrapper.style.transform = `translateX(-${fsIndex * 100}%)`;
+        fsRestart();
+    };
+
+    function fsRestart() {
+        clearInterval(fsAutoSlide);
+        fsAutoSlide = setInterval(fsSlide, 3000);
+    }
+
+    // ⭐ Pause slider on hover
+    fsWrapper.addEventListener("mouseenter", () => {
+        clearInterval(fsAutoSlide);
+    });
+
+    // ⭐ Resume slider on mouse leave
+    fsWrapper.addEventListener("mouseleave", () => {
+        fsAutoSlide = setInterval(fsSlide, 3000);
+    });
+</script>
+
+
+</body>
+</html>
