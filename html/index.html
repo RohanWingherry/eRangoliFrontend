@@ -211,61 +211,110 @@
     </section>
 
     <!-- Top Categories Section -->
-    <div class="categories-container">
+    <section class="top-carousel-container">
+
       <div class="heading-tag-for-section">
         <div>Top Categories</div>
         <div class="heading-line-categories"></div>
       </div>
-      <button class="nav-arrow left" onclick="scrollCategories(-1)">
-        <img src="../assets/CaretCircleLeft.png" alt="" />
-      </button>
-      <div class="categories-wrapper">
-        <div class="categories-grid" id="categoriesGrid">
-          <div class="category-item">
-            <div class="category-card">
-              <img src="../assets/Rectangle 355.png" alt="Jewellery" />
-              <span class="category-label">Jewellery</span>
-            </div>
-            <button class="shop-now-btn">Shop Now</button>
-          </div>
 
-          <div class="category-item">
-            <div class="category-card">
-              <img src="../assets/Rectangle 2(1).png" alt="Kitchen ware" />
-              <span class="category-label">Kitchen ware</span>
-            </div>
-            <button class="shop-now-btn">Shop Now</button>
-          </div>
+      <div class="main-top-category-main">
+        <button id="top-prevBtn" class="top-nav-btn" disabled>
+          <img src="../assets/CaretCircleLeft.png" alt="Previous" />
+        </button>
 
-          <div class="category-item">
-            <div class="category-card">
-              <img src="../assets/ractangle3.png" alt="Home decor" />
-              <span class="category-label">Home decor</span>
-            </div>
-            <button class="shop-now-btn">Shop Now</button>
-          </div>
+        <div class="top-carousel" id="top-carousel">
+          <div class="top-cards-wrapper" id="top-cardsWrapper">
 
-          <div class="category-item">
-            <div class="category-card">
-              <img src="../assets/Rectangle 5.png" alt="Wall Art" />
-              <span class="category-label">Wall Art</span>
+            <!-- Category Cards -->
+            <div class="top-card top-category-item">
+              <div class="top-category-card">
+                <img src="../assets/Rectangle 355.png" alt="Jewellery" />
+                <span class="top-category-label">Jewellery</span>
+              </div>
+              <button class="top-shop-now-btn">Shop Now</button>
             </div>
-            <button class="shop-now-btn">Shop Now</button>
-          </div>
 
-          <div class="category-item">
-            <div class="category-card">
-              <img src="../assets/Rectangle 6.png" alt="Pottery" />
-              <span class="category-label">Pottery</span>
+            <div class="top-card top-category-item">
+              <div class="top-category-card">
+                <img src="../assets/Rectangle 2(1).png" alt="Kitchen ware" />
+                <span class="top-category-label">Kitchen ware</span>
+              </div>
+              <button class="top-shop-now-btn">Shop Now</button>
             </div>
-            <button class="shop-now-btn">Shop Now</button>
+
+            <div class="top-card top-category-item">
+              <div class="top-category-card">
+                <img src="../assets/ractangle3.png" alt="Home decor" />
+                <span class="top-category-label">Home decor</span>
+              </div>
+              <button class="top-shop-now-btn">Shop Now</button>
+            </div>
+
+            <div class="top-card top-category-item">
+              <div class="top-category-card">
+                <img src="../assets/Rectangle 5.png" alt="Wall Art" />
+                <span class="top-category-label">Wall Art</span>
+              </div>
+              <button class="top-shop-now-btn">Shop Now</button>
+            </div>
+
+            <div class="top-card top-category-item">
+              <div class="top-category-card">
+                <img src="../assets/Rectangle 6.png" alt="Pottery" />
+                <span class="top-category-label">Pottery</span>
+              </div>
+              <button class="top-shop-now-btn">Shop Now</button>
+            </div>
+
+            <div class="top-card top-category-item">
+              <div class="top-category-card">
+                <img src="../assets/Rectangle 355.png" alt="Jewellery" />
+                <span class="top-category-label">Jewellery</span>
+              </div>
+              <button class="top-shop-now-btn">Shop Now</button>
+            </div>
+
+            <div class="top-card top-category-item">
+              <div class="top-category-card">
+                <img src="../assets/Rectangle 2(1).png" alt="Kitchen ware" />
+                <span class="top-category-label">Kitchen ware</span>
+              </div>
+              <button class="top-shop-now-btn">Shop Now</button>
+            </div>
+
+            <div class="top-card top-category-item">
+              <div class="top-category-card">
+                <img src="../assets/ractangle3.png" alt="Home decor" />
+                <span class="top-category-label">Home decor</span>
+              </div>
+              <button class="top-shop-now-btn">Shop Now</button>
+            </div>
+
+            <div class="top-card top-category-item">
+              <div class="top-category-card">
+                <img src="../assets/Rectangle 5.png" alt="Wall Art" />
+                <span class="top-category-label">Wall Art</span>
+              </div>
+              <button class="top-shop-now-btn">Shop Now</button>
+            </div>
+
+            <div class="top-card top-category-item">
+              <div class="top-category-card">
+                <img src="../assets/Rectangle 6.png" alt="Pottery" />
+                <span class="top-category-label">Pottery</span>
+              </div>
+              <button class="top-shop-now-btn">Shop Now</button>
+            </div>
+
           </div>
         </div>
+
+        <button id="top-nextBtn" class="top-nav-btn">
+          <img src="../assets/rightarrow.png" alt="Next" />
+        </button>
       </div>
-      <button class="nav-arrow right" onclick="scrollCategories(1)">
-        <img src="../assets/rightarrow.png" alt="" />
-      </button>
-    </div>
+    </section>
 
     <!-- Banner Section -->
     <div class="banner-section-discount">
@@ -295,12 +344,8 @@
       </div>
     </div>
 
-    <!-- Top Categories Section -->
+    <!-- State Categories Section -->
     <div class="state-section">
-      <div class="heading-tag-for-section">
-        <div>Shop By States</div>
-        <div class="heading-line-categories"></div>
-      </div>
       <div class="state-background">
         <!-- Slider -->
         <div class="state-carousel">
@@ -310,14 +355,14 @@
               <img src="../assets/Rectangle 349.png" alt="Andhra Pradesh" />
 
               <div class="state-content-box">
-                <h3>Andhra pradesh</h3>
+                <h3>Andhra Pradesh</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Curabitur sodales risus a dui fringilla. Sed vehicula in lorem
                   quis ultrices sodales risus a dui fringilla. Sed vehicula in
                   lorem quis ultrices.
                 </p>
-                <button class="explore-now-btn">Explore Now</button>
+                <button class="explore-now-btn" id="stateExploreBtn">Explore Now</button>
               </div>
             </div>
 
@@ -333,7 +378,41 @@
                   quis ultrices sodales risus a dui fringilla. Sed vehicula in
                   lorem quis ultrices.
                 </p>
-                <button class="explore-now-btn">Explore Now</button>
+                <button class="explore-now-btn" id="stateExploreBtn">Explore Now</button>
+
+              </div>
+            </div>
+            <!-- slide 3 -->
+            <div class="state-slide">
+              <img src="../assets/Rectangle 349.png" alt="Rajasthan" />
+
+              <div class="state-content-box">
+                <h3>Gujrat</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Curabitur sodales risus a dui fringilla. Sed vehicula in lorem
+                  quis ultrices sodales risus a dui fringilla. Sed vehicula in
+                  lorem quis ultrices sodales risus a dui fringilla. Sed
+                  vehicula in lorem quis ultrices.
+                </p>
+                <button class="explore-now-btn" id="stateExploreBtn">Explore Now</button>
+              </div>
+            </div>
+
+            <!-- slide 4 -->
+            <div class="state-slide">
+              <img src="../assets/Rectangle 349.png" alt="Rajasthan" />
+
+              <div class="state-content-box">
+                <h3>Madhya Pradesh</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Curabitur sodales risus a dui fringilla. Sed vehicula in lorem
+                  quis ultrices sodales risus a dui fringilla. Sed vehicula in
+                  lorem quis ultrices sodales risus a dui fringilla. Sed
+                  vehicula in lorem quis ultrices.
+                </p>
+                <button class="explore-now-btn" id="stateExploreBtn">Explore Now</button>
               </div>
             </div>
           </div>
@@ -583,32 +662,83 @@
     <div class="traditional-wrapper">
       <div class="marketplace-section">
         <div class="marketplace-content">
-          <div class="heading-tag-for-section-marketplace">
-            <div>Traditional Marketplace</div>
-            <div class="heading-line-marketplace"></div>
+          <!-- Slide 1 Content -->
+          <div class="content-slide active">
+            <div class="heading-tag-for-section-marketplace">
+              <div>Traditional Marketplace</div>
+              <div class="heading-line-marketplace"></div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+              cursus risus sit amet velit scelerisque semper. Donec a elit
+              dignissim, varius metus ut, varius leo. Sed vestibulum id erat sit
+              amet posuere. Mauris tincidunt ut arcu vitae rhoncus. Nulla
+              facilisi. Curabitur rutrum, ante ac convallis fringilla, ex ex
+              varius lectus, sed semper sem dui at lorem. Pellentesque habitant.
+            </p>
           </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-            cursus risus sit amet velit scelerisque semper. Donec a elit
-            dignissim, varius metus ut, varius leo. Sed vestibulum id erat sit
-            amet posuere. Mauris tincidunt ut arcu vitae rhoncus. Nulla
-            facilisi. Curabitur rutrum, ante ac convallis fringilla, ex ex
-            varius lectus, sed semper sem dui at lorem. Pellentesque habitant
-            morbi tristique senectus et netus et malesuada fames ac turpis
-            egestas.
-          </p>
-          <button class="seller-btn">Become a Seller</button>
+
+          <!-- Slide 2 Content -->
+          <div class="content-slide">
+            <div class="heading-tag-for-section-marketplace">
+              <div>Authentic Local Products</div>
+              <div class="heading-line-marketplace"></div>
+            </div>
+            <p>
+              Discover handcrafted items from local artisans. Each product tells
+              a unique story of tradition and craftsmanship. Supporting local
+              sellers helps preserve cultural heritage and promotes sustainable
+              commerce. Browse through a curated selection of authentic goods
+              made with care and dedication. Experience the richness of
+              traditional marketplaces brought to your doorstep.
+            </p>
+          </div>
+
+          <!-- Slide 3 Content -->
+          <div class="content-slide">
+            <div class="heading-tag-for-section-marketplace">
+              <div>Join Our Community</div>
+              <div class="heading-line-marketplace"></div>
+            </div>
+            <p>
+              Connect with buyers and sellers in your area. Build meaningful
+              relationships through trusted commerce. Our platform brings
+              together people who value quality and authenticity. Share your
+              passion for traditional crafts and products. Become part of a
+              growing network that celebrates local businesses and cultural
+              diversity.
+            </p>
+          </div>
+
+          <button class="seller-btn" id="marketSellerBtn">Become a Seller</button>
         </div>
         <div class="marketplace-image">
-          <img src="../assets/market-place.png" alt="Traditional Marketplace" />
+          <div class="market-carousel-container">
+            <div class="market-carousel-slide active">
+              <img
+                src="../assets/market-place.png"
+                alt="Traditional Marketplace 1"
+              />
+            </div>
+            <div class="market-carousel-slide">
+              <img
+                src="../assets/image 1.png"
+                alt="Traditional Marketplace 2"
+              />
+            </div>
+            <div class="market-carousel-slide">
+              <img
+                src="../assets/market-place.png"
+                alt="Traditional Marketplace 3"
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div class="marketplace-dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+        <span class="market-dot active" data-slide="0"></span>
+        <span class="market-dot" data-slide="1"></span>
+        <span class="market-dot" data-slide="2"></span>
       </div>
     </div>
 
@@ -822,7 +952,242 @@
       </div>
     </section>
 
+    <!-- Customer Reviews Section -->
+    <section class="customer-section">
+      <div class="heading-tag-for-section">
+        <div>Meet Our Customers</div>
+        <div class="heading-line-customer"></div>
+      <div class="customer-box-customer">
+        <!-- LEFT ARROW -->
+        <button class="customer-arrow-btn customer-left" id="customer-leftArrow">
+          <img src="../assets/CaretCircleLeft.png" />
+        </button>
+
+        <!-- SLIDER WINDOW -->
+        <div class="customer-slider-window">
+          <div class="customer-slider-track" id="customer-slider">
+           <!-- CARD 1 -->
+            <div class="customer-card">
+              <img src="../assets/profile1.svg" class="customer-pic" />
+              <div class="customer-info">
+                <div class="customer-top">
+                  <div class="customer-name">Aarav Menon</div>
+                  <div class="customer-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </div>
+                </div>
+                <div class="customer-desc">
+                  Excellent service! Really impressed with the attention to detail.
+                </div>
+                <div class="customer-date">05/01/2026</div>
+              </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="customer-card">
+              <img src="../assets/profile1.svg" class="customer-pic" />
+              <div class="customer-info">
+                <div class="customer-top">
+                  <div class="customer-name">Riya Sharma</div>
+                  <div class="customer-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </div>
+                </div>
+                <div class="customer-desc">
+                  Professional team and great experience. Quality was impressive!
+                </div>
+                <div class="customer-date">17/12/2025</div>
+              </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="customer-card">
+              <img src="../assets/profile1.svg" class="customer-pic" />
+              <div class="customer-info">
+                <div class="customer-top">
+                  <div class="customer-name">Kabir Soni</div>
+                  <div class="customer-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </div>
+                </div>
+                <div class="customer-desc">
+                  Great work! Would happily recommend to others.
+                </div>
+                <div class="customer-date">02/01/2026</div>
+              </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="customer-card">
+              <img src="../assets/profile1.svg" class="customer-pic" />
+              <div class="customer-info">
+                <div class="customer-top">
+                  <div class="customer-name">Megha Rao</div>
+                  <div class="customer-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+                <div class="customer-desc">
+                  Absolutely loved the outcome! Smooth, fast, and reliable service.
+                </div>
+                <div class="customer-date">23/12/2025</div>
+              </div>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="customer-card">
+              <img src="../assets/profile1.svg" class="customer-pic" />
+              <div class="customer-info">
+                <div class="customer-top">
+                  <div class="customer-name">Ishaan Verma</div>
+                  <div class="customer-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </div>
+                </div>
+                <div class="customer-desc">
+                  Good experience overall. Customer support was very helpful.
+                </div>
+                <div class="customer-date">11/01/2026</div>
+              </div>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="customer-card">
+              <img src="../assets/profile1.svg" class="customer-pic" />
+              <div class="customer-info">
+                <div class="customer-top">
+                  <div class="customer-name">Sanya Kapoor</div>
+                  <div class="customer-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </div>
+                </div>
+                <div class="customer-desc">
+                  Good quality. Delivery was quick, packaging could improve.
+                </div>
+                <div class="customer-date">28/12/2025</div>
+              </div>
+            </div>
+
+            <!-- CARD 7 -->
+            <div class="customer-card">
+              <img src="../assets/profile1.svg" class="customer-pic" />
+              <div class="customer-info">
+                <div class="customer-top">
+                  <div class="customer-name">Rudra Chatterjee</div>
+                  <div class="customer-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </div>
+                </div>
+                <div class="customer-desc">
+                  Amazing experience! Very supportive team and great results.
+                </div>
+                <div class="customer-date">03/01/2026</div>
+              </div>
+            </div>
+
+            <!-- CARD 8 -->
+            <div class="customer-card">
+              <img src="../assets/profile1.svg" class="customer-pic" />
+              <div class="customer-info">
+                <div class="customer-top">
+                  <div class="customer-name">Tanya Bhatt</div>
+                  <div class="customer-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </div>
+                </div>
+                <div class="customer-desc">
+                  Beautiful experience end-to-end. Totally worth the price!
+                </div>
+                <div class="customer-date">15/12/2025</div>
+              </div>
+            </div>
+
+            <!-- CARD 9 -->
+            <div class="customer-card">
+              <img src="../assets/profile1.svg" class="customer-pic" />
+              <div class="customer-info">
+                <div class="customer-top">
+                  <div class="customer-name">Dev Malhotra</div>
+                  <div class="customer-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </div>
+                </div>
+                <div class="customer-desc">
+                  Smooth and pleasant interaction. Happy with the results.
+                </div>
+                <div class="customer-date">30/12/2025</div>
+              </div>
+            </div>
+
+            <!-- CARD 10 -->
+            <div class="customer-card">
+              <img src="../assets/profile1.svg" class="customer-pic" />
+              <div class="customer-info">
+                <div class="customer-top">
+                  <div class="customer-name">Anika Joshi</div>
+                  <div class="customer-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+                <div class="customer-desc">
+                  Exceptional service! Really appreciate the dedication!
+                </div>
+                <div class="customer-date">09/01/2026</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- RIGHT ARROW -->
+        <button class="customer-arrow-btn customer-right" id="customer-rightArrow">
+          <img src="../assets/rightarrow.png" />
+        </button>
+      </div>
+    </section>
+
     <script src="../javascript/master.js"></script>
+    <script src="../javascript/christmasoffers.js"></script>
     <script src="../javascript/topCategory.js"></script>
   </body>
 </html>

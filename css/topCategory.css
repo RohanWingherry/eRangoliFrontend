@@ -12,120 +12,134 @@
   background-color: #ffffff;
   border-radius: 0px;          
 }
-.categories-wrapper {
-        overflow: hidden;
-        /* overflow-y: visible; */
+    .top-carousel-container {
+      padding: 20px 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      overflow: hidden;
+      box-sizing: border-box;
+      background-color: white;
+    }
+
+    .main-top-category-main{
+      padding-top: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .top-carousel {
+      overflow: hidden;
+      flex-grow: 1;
+      position: relative;
+    }
+
+    .top-cards-wrapper {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+      will-change: transform;
+      align-items: center;
+    }
+
+    .top-card {
+      position: relative;
+      background-image: url("../assets/Group 5[1].png");
+      border-radius: 10px;
+      padding: 10px;
+      margin: 0px 10px;
+      min-width: 100px;
+      text-align: center;
+      box-sizing: border-box;
+      flex: 0 0 auto;
+      margin-bottom: 20px;
+    }
+
+    /* Category card styles */
+    .top-category-card img {
+      width: 100%;
+      border-radius: 8px;
+      min-height: 218px;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .top-category-label {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: white;
+      padding: 6px 18px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .top-shop-now-btn {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #A10404;
+      color: white;
+      border: none;
+      padding: 10px 30px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      text-wrap: nowrap;
+    }
+
+    @media (max-width:1216px) {
+      .top-shop-now-btn{
+        font-size: 12px;
+        text-wrap: nowrap;
       }
+    }
 
-      .categories-grid {
-        margin-top: 20px;
-        display: flex;
-        gap: 15px;
-        transition: transform 0.3s ease;
-      }
+    @media (max-width:572px) {
+      .top-shop-now-btn{ padding: 10px 20px; }
+    }
 
-      .category-card {
-        min-width: 260px;
-        height: 180px;
-        border-radius: 8px;
-        overflow: hidden;
-        position: relative;
-        cursor: pointer;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      }
+    @media (max-width:490px) {
+      .top-shop-now-btn{ padding: 8px 15px; }
+    }
 
-      .category-card img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+    @media (max-width:464px) {
+      .top-shop-now-btn{ padding: 5px 10px; }
+    }
 
-      .category-label {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        background-color: white;
-        padding: 6px 18px;
-        border-radius: 6px;
-        font-size: 13px;
-        font-weight: bold;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      }
-      .category-item {
-        position: relative;
-        min-width: 260px;
-        height: auto;
-        background-image: url("../assets/Group 5[1].png");
-        border-radius: 10px;
-        padding: 8px;
-        flex-shrink: 0;
-        margin-bottom: 1.5rem;
-  
-      }
+    @media (max-width:424px) {
+      .top-shop-now-btn{ padding: 10px 30px; }
+    }
 
-      .shop-now-btn {
-        position: absolute;
-        bottom: -1rem;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: #A10404;
-        color: white;
-        border: none;
-        padding: 10px 30px;
-        border-radius: 4px;
-        cursor: pointer;
-        font-weight: bold;
-        font-size: 14px;
-        transition: all 0.3s ease;
-      }
+    .top-shop-now-btn:hover { background-color: #690404; }
 
-      .shop-now-btn:hover {
-        background-color: #a01729;
-        transform: translateX(-50%) translateY(-2px);
-      
-      }
+    /* Extra Large Desktop: 5 cards */
+    @media (min-width: 1441px) { .top-card { width: calc(100% / 5 - 20px); } }
+    /* Desktop: 4 cards */
+    @media (min-width: 1025px) and (max-width: 1440px) { .top-card { width: calc(100% / 4 - 20px); } }
+    /* Tablet: 3 cards */
+    @media (min-width: 768px) and (max-width: 1024px) { .top-card { width: calc(100% / 3 - 20px); } }
+    /* Small tablet / large mobile: 2 cards */
+    @media (min-width: 425px) and (max-width: 767px) { .top-card { width: calc(100% / 2 - 20px); } }
+    /* Mobile: 1 card */
+    @media (max-width: 424px) { .top-card { width: calc(100% / 1 - 20px); } }
 
-.nav-arrow {
-  position: absolute;
-  top: 58%;
-  transform: translateY(-58%);
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  background: transparent;   
-  border: none;              
-  cursor: pointer;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.nav-arrow.disabled {
-  opacity: 0.3;
-  cursor: default;
-  pointer-events: none;   
-}
+    .top-nav-btn {
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 50%;
+      background-color: transparent;
+    }
 
-.nav-arrow img {
-  width: 70%;
-  height: 70%;
-  display: block;
-}
-
-
-
-      .nav-arrow:hover {
-        background-color: white;
-      }
-
-      .nav-arrow.left {
-        left: 10px;
-      }
-
-      .nav-arrow.right {
-        right: 10px;
-      }
-
+    .top-nav-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
       /* Banner Section */
 
 .banner-section-discount {
@@ -443,6 +457,33 @@
   padding: 0 10px;         
 }
 
+.nav-arrow {
+  position: absolute;
+  top: 58%;
+  transform: translateY(-58%);
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: transparent;   
+  border: none;              
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-arrow.disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;   
+}
+
+.nav-arrow img {
+  width: 70%;
+  height: 70%;
+  display: block;
+}
+
 
       .products-grid {
         display: flex;
@@ -566,7 +607,7 @@
 }
 
 .products-container .nav-arrow:hover {
-  scale: 1.1;
+  scale: 1;
 }
 
 
