@@ -145,20 +145,20 @@
           <button class="seller-btn">Become a Seller</button>
         </div>
         <div class="marketplace-image">
-          <div class="carousel-container">
-            <div class="carousel-slide active">
+          <div class="market-carousel-container">
+            <div class="market-carousel-slide active">
               <img
                 src="../assets/market-place.png"
                 alt="Traditional Marketplace 1"
               />
             </div>
-            <div class="carousel-slide">
+            <div class="market-carousel-slide">
               <img
                 src="../assets/image 1.png"
                 alt="Traditional Marketplace 2"
               />
             </div>
-            <div class="carousel-slide">
+            <div class="market-carousel-slide">
               <img
                 src="../assets/market-place.png"
                 alt="Traditional Marketplace 3"
@@ -168,9 +168,9 @@
         </div>
       </div>
       <div class="marketplace-dots">
-        <span class="dot-market active" data-slide="0"></span>
-        <span class="dot-market" data-slide="1"></span>
-        <span class="dot-market" data-slide="2"></span>
+        <span class="market-dot active" data-slide="0"></span>
+        <span class="market-dot" data-slide="1"></span>
+        <span class="market-dot" data-slide="2"></span>
       </div>
     </div>
 
@@ -178,9 +178,9 @@
       // traditional Marketplace Carousel
 
       let currentSlide = 0;
-      const imageSlides = document.querySelectorAll(".carousel-slide");
+      const imageSlides = document.querySelectorAll(".market-carousel-slide");
       const contentSlides = document.querySelectorAll(".content-slide");
-      const dots = document.querySelectorAll(".dot-market");
+      const dots = document.querySelectorAll(".market-dot");
       const totalSlides = imageSlides.length;
 
       function showSlide(index) {

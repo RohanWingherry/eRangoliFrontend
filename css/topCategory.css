@@ -689,23 +689,23 @@
       }
 
       /* Carousel styles */
-      .carousel-container {
+      .market-carousel-container {
         position: relative;
         width: 100%;
         height: 180px;
       }
 
-      .carousel-slide {
+      .market-carousel-slide {
         display: none;
         width: 100%;
         height: 100%;
       }
 
-      .carousel-slide.active {
+      .market-carousel-slide.active {
         display: block;
       }
 
-      .carousel-slide img {
+      .market-carousel-slide img {
         width: 100%;
         height: 180px;
         object-fit: cover;
@@ -729,7 +729,7 @@
         margin-top: 10px;
       }
 
-      .marketplace-dots .dot-market {
+      .marketplace-dots .market-dot {
         display: inline-block;
         width: 10px;
         height: 10px;
@@ -739,7 +739,7 @@
         cursor: pointer;
       }
 
-      .marketplace-dots .dot-market.active {
+      .marketplace-dots .market-dot.active {
         background-color: #b21c20;
       }
 
