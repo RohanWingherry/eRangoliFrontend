@@ -6,7 +6,6 @@ const catLeft = document.querySelector(".categories-container .nav-arrow.left");
 const catRight = document.querySelector(".categories-container .nav-arrow.right");
 
 let catIndex = 0;
-
 function getCatCardWidth() {
   return catItems[0].clientWidth + 20;  
 }
@@ -14,7 +13,6 @@ function getCatCardWidth() {
 function updateCatSlider() {
   const cardWidth = getCatCardWidth();
   const total = catItems.length;
-
 
   const visible = Math.floor(catGrid.parentElement.clientWidth / cardWidth);
 
@@ -25,7 +23,6 @@ function updateCatSlider() {
 
   catGrid.style.transform = `translateX(-${catIndex * cardWidth}px)`;
 
-
   catLeft.classList.toggle("disabled", catIndex === 0);
   catRight.classList.toggle("disabled", catIndex === maxIndex);
 }
@@ -34,20 +31,15 @@ function scrollCategories(direction) {
   const cardWidth = getCatCardWidth();
   const visible = Math.floor(catGrid.parentElement.clientWidth / cardWidth);
 
-  // ek click par "visible" cards jump karo
   catIndex += direction * visible;
 
   updateCatSlider();
 }
 
-// Load & resize adjust
 updateCatSlider();
 window.addEventListener("resize", updateCatSlider);
 
-
-
-      // State Carousel
-
+// State Carousel
 const stateSlides = document.getElementById("stateSlides");
 const stateSlideItems = document.querySelectorAll(".state-slide");
 
@@ -57,7 +49,6 @@ const stateRightArrow = document.querySelector(".state-controls .state-arrow.nex
 let stateIndex = 0;
 
 function getStateSlideWidth() {
-
   return stateSlideItems[0].clientWidth;
 }
 
@@ -65,23 +56,33 @@ function updateStateSlider() {
   const slideWidth = getStateSlideWidth();
   const totalSlides = stateSlideItems.length;
 
-  // scroll to exact width * index
+  // Slide move karna
   stateSlides.style.transform = `translateX(-${stateIndex * slideWidth}px)`;
 
-  // left arrow disable
+  // Active class set karna – yahi se animation trigger hoga
+  stateSlideItems.forEach((slide, idx) => {
+    if (idx === stateIndex) {
+      slide.classList.add("active");
+    } else {
+      slide.classList.remove("active");
+    }
+  });
+
+  // Left arrow state
   if (stateIndex === 0) {
     stateLeftArrow.classList.add("disabled");
   } else {
     stateLeftArrow.classList.remove("disabled");
   }
 
-  // right arrow disable
+  // Right arrow state
   if (stateIndex === totalSlides - 1) {
     stateRightArrow.classList.add("disabled");
   } else {
     stateRightArrow.classList.remove("disabled");
   }
 }
+
 
 function changeStateSlide(direction) {
   const totalSlides = stateSlideItems.length;
@@ -92,16 +93,44 @@ function changeStateSlide(direction) {
   if (stateIndex > totalSlides - 1) stateIndex = totalSlides - 1;
 
   updateStateSlider();
+  
+  // Restart auto-scroll after manual click
+  restartStateAutoScroll();
 }
 
-// INITIAL LOAD
 updateStateSlider();
-
 window.addEventListener("resize", updateStateSlider);
 
+// Auto-scroll for State Carousel
+let stateAutoScrollInterval;
 
+function startStateAutoScroll() {
+  stateAutoScrollInterval = setInterval(() => {
+    const totalSlides = stateSlideItems.length;
+    
+    stateIndex++;
+    
+    if (stateIndex >= totalSlides) {
+      stateIndex = 0;
+    }
+    
+    updateStateSlider();
+  }, 2000); // 2000ms = 2 seconds
+}
 
-      // Products Carousel
+function stopStateAutoScroll() {
+  clearInterval(stateAutoScrollInterval);
+}
+
+function restartStateAutoScroll() {
+  stopStateAutoScroll();
+  startStateAutoScroll();
+}
+
+// Start auto-scroll on page load
+startStateAutoScroll();
+
+// Products Carousel
 const prodGrid = document.getElementById("productsGrid");
 const prodItems = document.querySelectorAll(".product-card");
 
