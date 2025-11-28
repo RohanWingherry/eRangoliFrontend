@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meet Our Customers</title>
+    <style>
+      .customer-section {
+        margin: 30px 30px;
+      }
+
+      .customer-box {
+        position: relative;
+        padding: 30px 30px;
+      }
+
+      .arrow-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+      }
+
+      .arrow-btn.left {
+        left: -40px;
+        margin-left: 15px;
+      }
+
+      .arrow-btn.right {
+        right: -40px;
+        margin-right: 15px;
+      }
+
+      .arrow-btn img {
+        width: 28px;
+        height: 28px;
+      }
+
+      .arrow-btn:disabled img {
+        opacity: 0.3;
+      }
+
+      .slider-window {
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .slider-track {
+        display: flex;
+        gap: 20px;
+        transition: transform 0.3s ease;
+      }
+
+      .card {
+        display: flex;
+        min-width: 350px;
+        gap: 14px;
+        flex-shrink: 1;
+      }
+
+      .pic {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-top: 1.5rem;
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .top {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .name {
+        font-size: 14px;
+        font-weight: 400;
+        color: #000000;
+      }
+
+      .stars {
+        color: #ecc824;
+        font-size: 16px;
+      }
+
+      .desc {
+        margin-top: 6px;
+        line-height: 1.4;
+        font-size: 13px;
+        width: 240px;
+        color: #000000;
+      }
+
+      .date {
+        margin-top: 10px;
+        font-size: 12px;
+        color: #8e8989;
+        text-align: right;
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+
+      /* Tablet (2 cards visible) */
+      @media (max-width: 992px) {
+        .card {
+          min-width: 320px;
+        }
+        .desc {
+          width: 210px;
+        }
+      }
+
+      /* Mobile (1 card visible) */
+      @media (max-width: 600px) {
+        .card {
+          min-width: 85vw;
+        }
+        .arrow-btn.left {
+          left: -20px;
+        }
+        .arrow-btn.right {
+          right: -20px;
+        }
+        .desc {
+          width: 70vw;
+        }
+        .stars {
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="customer-section">
+      <div class="customer-box">
+        <!-- LEFT ARROW -->
+        <button class="arrow-btn left" id="leftArrow" disabled>
+          <img src="../assets/CaretCircleLeft.png" />
+        </button>
+
+        <!-- SLIDER WINDOW -->
+        <div class="slider-window">
+          <div class="slider-track" id="slider">
+            <!-- CARD 1 -->
+            <div class="card">
+              <img src="../assets/profile1.svg" class="pic" />
+              <div class="info">
+                <div class="top">
+                  <div class="name">Shreya Pande</div>
+                  <div class="stars">★★★★★</div>
+                </div>
+                <div class="desc">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Curabitur sodales risus a dui luctus fringilla. Sed vehicula
+                  in lorem quis ultrices.
+                </div>
+                <div class="date">18/11/2025</div>
+              </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="card">
+              <img src="../assets/profile1.svg" class="pic" />
+              <div class="info">
+                <div class="top">
+                  <div class="name">Shreya Pande</div>
+                  <div class="stars">★★★★★</div>
+                </div>
+                <div class="desc">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Curabitur sodales risus a dui luctus fringilla. Sed vehicula
+                  in lorem quis ultrices.
+                </div>
+                <div class="date">18/11/2025</div>
+              </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="card">
+              <img src="../assets/profile1.svg" class="pic" />
+              <div class="info">
+                <div class="top">
+                  <div class="name">Shreya Pande</div>
+                  <div class="stars">★★★★★</div>
+                </div>
+                <div class="desc">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Curabitur sodales risus a dui luctus fringilla. Sed vehicula
+                  in lorem quis ultrices.
+                </div>
+                <div class="date">18/11/2025</div>
+              </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="card">
+              <img src="../assets/profile1.svg" class="pic" />
+              <div class="info">
+                <div class="top">
+                  <div class="name">Shreya Pande</div>
+                  <div class="stars">★★★★★</div>
+                </div>
+                <div class="desc">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Curabitur sodales risus a dui luctus fringilla. Sed vehicula
+                  in lorem quis ultrices.
+                </div>
+                <div class="date">18/11/2025</div>
+              </div>
+            </div>
+            <div class="card">
+              <img src="../assets/profile1.svg" class="pic" />
+              <div class="info">
+                <div class="top">
+                  <div class="name">Shreya Pande</div>
+                  <div class="stars">★★★★★</div>
+                </div>
+                <div class="desc">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Curabitur sodales risus a dui luctus fringilla. Sed vehicula
+                  in lorem quis ultrices.
+                </div>
+                <div class="date">18/11/2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT ARROW -->
+        <button class="arrow-btn right" id="rightArrow">
+          <img src="../assets/rightarrow.png" />
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const slider = document.getElementById("slider");
+      const leftBtn = document.getElementById("leftArrow");
+      const rightBtn = document.getElementById("rightArrow");
+
+      let index = 0;
+
+      function cardWidth() {
+        return slider.children[0].offsetWidth + 20; // responsive gap fix
+      }
+
+      function visibleCards() {
+        return Math.floor(slider.parentElement.offsetWidth / cardWidth());
+      }
+
+      function updateArrows() {
+        leftBtn.disabled = index === 0;
+
+        const total = slider.children.length;
+        if (index >= total - visibleCards()) {
+          rightBtn.disabled = true;
+        } else {
+          rightBtn.disabled = false;
+        }
+      }
+
+      rightBtn.onclick = () => {
+        const total = slider.children.length;
+        if (index < total - visibleCards()) {
+          index++;
+          slider.style.transform = `translateX(-${index * cardWidth()}px)`;
+          updateArrows();
+        }
+      };
+
+      leftBtn.onclick = () => {
+        if (index > 0) {
+          index--;
+          slider.style.transform = `translateX(-${index * cardWidth()}px)`;
+          updateArrows();
+        }
+      };
+
+      window.addEventListener("resize", () => {
+        slider.style.transform = `translateX(-${index * cardWidth()}px)`;
+        updateArrows();
+      });
+
+      updateArrows();
+    </script>
+  </body>
+</html>
