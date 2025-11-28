@@ -9,7 +9,11 @@
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;900&display=swap");
         @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
-
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
         .ma-meetourartisan {
             font-family: Nunito Sans;
             line-height: 100%;
@@ -28,7 +32,7 @@
         }
 
         .ma-heading .ma-line {
-            margin: -15px auto;
+            margin: 15px auto;
             max-width: 262px;
             height: 3px;
             background: #A10404;
@@ -45,7 +49,7 @@
         .ma-carousel-wrapper {
             width: 100%;
             overflow: hidden;
-            padding-block: 0rem;
+            /* padding-block: 2rem; */
             position: relative;
         }
 
@@ -53,12 +57,15 @@
             display: flex;
             transition: transform 0.6s ease;
             padding-bottom: 5px;
+            /* border: 2px solid black; */
         }
 
         .ma-card {
             flex-shrink: 0;
             text-align: center;
             transition: 0.35s ease;
+            align-items: center;
+            margin:auto
         }
 
         .ma-card {
@@ -67,10 +74,10 @@
         }
 
         .ma-artist-card {
-            width: 96%;
+            width: 100%;
             max-width: 720px;
             padding: 30px 32px;
-            background: rgba(255, 255, 255, 0.93);
+            background: rgba(255, 255, 255, 0.96);
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -78,7 +85,7 @@
             background-image: url("../assets/img-bg.png");
             background-size: cover;
             border-radius: 15px;
-            box-shadow: 0px 4px 4px 0px #00000040;
+            /* box-shadow: 0px 4px 4px 0px #00000040; */
             position: relative;
             /* border: 2px solid purple; */
         }
@@ -87,7 +94,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: rgba(255, 255, 255, 0.75);
+            background: rgba(255, 255, 255, 0.85);
             border-radius: inherit;
             z-index: 0;
         }
@@ -98,9 +105,9 @@
         }
 
         .ma-artist-left img {
-            max-width: 218px;
+            max-width: 210px;
             width: 100%;
-            height: 328px;
+            height: 280px;
             object-fit: cover;
             border-radius: 83.5px;
         }
@@ -128,6 +135,7 @@
 
         .ma-card .ma-line {
             max-width: 262px;
+            width: 100%;
             height: 3px;
             background: #A10404;
             border-radius: 5px;
@@ -154,12 +162,17 @@
             .ma-artist-card {
                 flex-direction: column;
                 text-align: center;
+                padding: 30px 20px;
+                /* width: ; */
             }
         }
 
         .ma-card.ma-active {
             transform: scale(1);
             opacity: 1;
+            box-shadow: 0px 4px 4px 0px #00000040;
+                        border-radius: 15px;
+
         }
 
         .ma-nav-btn {
@@ -305,44 +318,72 @@
     </div>
 
     <script>
-        const maTrack = document.getElementById("ma-track");
-        let maCards = Array.from(document.querySelectorAll(".ma-card"));
+    const maTrack = document.getElementById("ma-track");
+    let maCards = Array.from(document.querySelectorAll(".ma-card"));
 
-        let maCurrent = 2;
+    let maCurrent = 2;
 
-        function maCenterCard() {
-            const maWrapWidth = document.querySelector(".ma-carousel-wrapper").offsetWidth;
-            const maCardWidth = maCards[0].offsetWidth;
+    function maCenterCard() {
+        const maWrapWidth = document.querySelector(".ma-carousel-wrapper").offsetWidth;
+        const maCardWidth = maCards[0].offsetWidth;
 
-            let maTranslateX =
-                maWrapWidth / 2 - maCardWidth / 2 - maCurrent * maCardWidth;
+        let maTranslateX =
+            maWrapWidth / 2 - maCardWidth / 2 - maCurrent * maCardWidth;
 
-            maTrack.style.transform = `translateX(${maTranslateX}px)`;
-        }
+        maTrack.style.transform = `translateX(${maTranslateX}px)`;
+    }
 
-        function maUpdateActive() {
-            maCards.forEach(c => c.classList.remove("ma-active"));
-            maCards[maCurrent].classList.add("ma-active");
-        }
+    function maUpdateActive() {
+        maCards.forEach(c => c.classList.remove("ma-active"));
+        maCards[maCurrent].classList.add("ma-active");
+    }
 
-        function maSlide(dir) {
-            maCurrent += dir;
+    function maSlide(dir = 1) {
+        maCurrent += dir;
 
-            if (maCurrent < 0) maCurrent = maCards.length - 1;
-            if (maCurrent >= maCards.length) maCurrent = 0;
-
-            maUpdateActive();
-            maCenterCard();
-        }
-
-        document.querySelector(".ma-next").onclick = () => maSlide(1);
-        document.querySelector(".ma-prev").onclick = () => maSlide(-1);
+        if (maCurrent < 0) maCurrent = maCards.length - 1;
+        if (maCurrent >= maCards.length) maCurrent = 0;
 
         maUpdateActive();
         maCenterCard();
+    }
 
-        window.onresize = maCenterCard;
-    </script>
+    // Button actions
+    document.querySelector(".ma-next").onclick = () => {
+        maSlide(1);
+        maRestartAuto();
+    };
+
+    document.querySelector(".ma-prev").onclick = () => {
+        maSlide(-1);
+        maRestartAuto();
+    };
+
+    // AUTO PLAYS EVERY 3 SECONDS
+    let maAuto = setInterval(() => maSlide(1), 3000);
+
+    function maRestartAuto() {
+        clearInterval(maAuto);
+        maAuto = setInterval(() => maSlide(1), 3000);
+    }
+
+    // HOVER → PAUSE
+    document.querySelector(".ma-carousel-wrapper").addEventListener("mouseenter", () => {
+        clearInterval(maAuto);
+    });
+
+    // MOUSE LEAVE → RESUME
+    document.querySelector(".ma-carousel-wrapper").addEventListener("mouseleave", () => {
+        maAuto = setInterval(() => maSlide(1), 3000);
+    });
+
+    // Initial setup
+    maUpdateActive();
+    maCenterCard();
+
+    window.onresize = maCenterCard;
+</script>
+
 
 </body>
 
