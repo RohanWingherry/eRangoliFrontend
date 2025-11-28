@@ -212,65 +212,98 @@
     </section>
 
     <!-- Top Categories Section -->
-    <div class="categories-container">
-        
-        <div class="heading-tag-for-section">
-            <div>Top Categories</div>
-            <div class="heading-line-categories"></div>
-        </div>
-        <button class="nav-arrow left" onclick="scrollCategories(-1)"><img src="../assets/CaretCircleLeft.png" alt=""></button>
-        <div class="categories-wrapper">
-          <div class="categories-grid" id="categoriesGrid">
-            <div class="category-item">
-              <div class="category-card">
-                <img src="../assets/Rectangle 355.png" alt="Jewellery" />
-                <span class="category-label">Jewellery</span>
-                
-              </div>
-              <button class="shop-now-btn">Shop Now</button>
-            </div>
+    <div class="carousel-container-categories">
+    <button id="prevBtn" class="nav-btn" disabled>❮</button>
 
-            <div class="category-item">
-            <div class="category-card">
-              <img src="../assets/Rectangle 2(1).png" alt="Kitchen ware" />
-              <span class="category-label">Kitchen ware</span>
-              
-            </div>
-            <button class="shop-now-btn">Shop Now</button>
-            </div>
+    <div class="carousel" id="carousel">
+      <div class="cards-wrapper" id="cardsWrapper">
 
-            <div class="category-item">
-            <div class="category-card">
-              <img src="../assets/ractangle3.png" alt="Home decor" />
-              <span class="category-label">Home decor</span>
-              
-            </div>
-            <button class="shop-now-btn">Shop Now</button>
-            </div>
-
-            <div class="category-item">
-            <div class="category-card">
-              <img src="../assets/Rectangle 5.png" alt="Wall Art" />
-              <span class="category-label">Wall Art</span>
-              
-            </div>
-            <button class="shop-now-btn">Shop Now</button>
-            </div>
-
-
-            <div class="category-item">
-            <div class="category-card">
-              <img src="../assets/Rectangle 6.png" alt="Pottery" />
-              <span class="category-label">Pottery</span>
-              
-            </div>
-            <button class="shop-now-btn">Shop Now</button>
-            </div>
-
+        <!-- Category Cards -->
+        <div class="card category-item">
+          <div class="category-card">
+            <img src="../assets/Rectangle 355.png" alt="Jewellery" />
+            <span class="category-label">Jewellery</span>
           </div>
+          <button class="shop-now-btn">Shop Now</button>
         </div>
-        <button class="nav-arrow right" onclick="scrollCategories(1)"><img src="../assets/rightarrow.png" alt=""></button>
+
+        <div class="card category-item">
+          <div class="category-card">
+            <img src="../assets/Rectangle 2(1).png" alt="Kitchen ware" />
+            <span class="category-label">Kitchen ware</span>
+          </div>
+          <button class="shop-now-btn">Shop Now</button>
+        </div>
+
+        <div class="card category-item">
+          <div class="category-card">
+            <img src="../assets/ractangle3.png" alt="Home decor" />
+            <span class="category-label">Home decor</span>
+          </div>
+          <button class="shop-now-btn">Shop Now</button>
+        </div>
+
+        <div class="card category-item">
+          <div class="category-card">
+            <img src="../assets/Rectangle 5.png" alt="Wall Art" />
+            <span class="category-label">Wall Art</span>
+          </div>
+          <button class="shop-now-btn">Shop Now</button>
+        </div>
+
+        <div class="card category-item">
+          <div class="category-card">
+            <img src="../assets/Rectangle 6.png" alt="Pottery" />
+            <span class="category-label">Pottery</span>
+          </div>
+          <button class="shop-now-btn">Shop Now</button>
+        </div>
+
+                <div class="card category-item">
+          <div class="category-card">
+            <img src="../assets/Rectangle 355.png" alt="Jewellery" />
+            <span class="category-label">Jewellery</span>
+          </div>
+          <button class="shop-now-btn">Shop Now</button>
+        </div>
+
+        <div class="card category-item">
+          <div class="category-card">
+            <img src="../assets/Rectangle 2(1).png" alt="Kitchen ware" />
+            <span class="category-label">Kitchen ware</span>
+          </div>
+          <button class="shop-now-btn">Shop Now</button>
+        </div>
+
+        <div class="card category-item">
+          <div class="category-card">
+            <img src="../assets/ractangle3.png" alt="Home decor" />
+            <span class="category-label">Home decor</span>
+          </div>
+          <button class="shop-now-btn">Shop Now</button>
+        </div>
+
+        <div class="card category-item">
+          <div class="category-card">
+            <img src="../assets/Rectangle 5.png" alt="Wall Art" />
+            <span class="category-label">Wall Art</span>
+          </div>
+          <button class="shop-now-btn">Shop Now</button>
+        </div>
+
+        <div class="card category-item">
+          <div class="category-card">
+            <img src="../assets/Rectangle 6.png" alt="Pottery" />
+            <span class="category-label">Pottery</span>
+          </div>
+          <button class="shop-now-btn">Shop Now</button>
+        </div>
+
+      </div>
     </div>
+
+    <button id="nextBtn" class="nav-btn">❯</button>
+  </div>
 
     <!-- Banner Section -->
     <div class="banner-section-discount">

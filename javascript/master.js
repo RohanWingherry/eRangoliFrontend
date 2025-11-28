@@ -127,3 +127,118 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
+
+
+
+// TOP CATEGORIES INTERACTION
+const cardsWrapper = document.getElementById("cardsWrapper");
+    const cards = Array.from(document.querySelectorAll(".card"));
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const carousel = document.getElementById("carousel");
+
+    let currentIndex = 0;
+    let cardsPerView = 1;
+
+    function getCardsPerViewFromCSS() {
+    if (window.matchMedia("(min-width:1441px)").matches) return 5;
+    if (window.matchMedia("(min-width:1025px) and (max-width:1440px)").matches) return 4;
+    if (window.matchMedia("(min-width:768px) and (max-width:1024px)").matches) return 3;
+    if (window.matchMedia("(min-width:425px) and (max-width:767px)").matches) return 2;
+    return 1; // width < 425px
+}
+
+
+    function getHorizontalMargin(el) {
+      const style = getComputedStyle(el);
+      return parseFloat(style.marginLeft || 0) + parseFloat(style.marginRight || 0);
+    }
+
+    function calculateLayout() {
+      if (!cards.length) return;
+
+      cardsPerView = getCardsPerViewFromCSS();
+
+      if (currentIndex + cardsPerView > cards.length) {
+        currentIndex = Math.max(0, cards.length - cardsPerView);
+      }
+
+      updateCarousel();
+    }
+
+    function updateButtons() {
+      const allVisible = cardsPerView >= cards.length;
+
+      if (allVisible) {
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
+        return;
+      }
+
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = (currentIndex + cardsPerView) >= cards.length;
+    }
+
+    function updateCarousel() {
+        if (!cards.length) return;
+
+        const cardRect = cards[0].getBoundingClientRect();
+        const cardFullWidth = Math.round(cardRect.width + getHorizontalMargin(cards[0]));
+
+        const containerWidth = Math.floor(carousel.clientWidth);
+        const totalCards = cards.length;
+        const totalWidth = totalCards * cardFullWidth;
+
+        if (totalWidth <= containerWidth) {
+            const offset = Math.round((containerWidth - totalWidth) / 2);
+            cardsWrapper.style.transform = `translateX(${offset}px)`;
+        } else {
+            let translateX = -currentIndex * cardFullWidth;
+
+            const visibleWidth = cardsPerView * cardFullWidth;
+            const overflow = totalWidth - visibleWidth;
+
+            if (currentIndex + cardsPerView >= totalCards) {
+                translateX = -overflow;
+            }
+
+            cardsWrapper.style.transform = `translateX(${translateX}px)`;
+        }
+
+        updateButtons();
+    }
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex += cardsPerView;
+
+      if (currentIndex + cardsPerView > cards.length) {
+        currentIndex = cards.length - cardsPerView;
+        if (currentIndex < 0) currentIndex = 0;
+      }
+
+      updateCarousel();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      currentIndex -= cardsPerView;
+      if (currentIndex < 0) currentIndex = 0;
+      updateCarousel();
+    });
+
+    let resizeObserver = null;
+    function startObservers() {
+      window.addEventListener("resize", calculateLayout);
+
+      if ('ResizeObserver' in window) {
+        resizeObserver = new ResizeObserver(calculateLayout);
+        resizeObserver.observe(carousel);
+        resizeObserver.observe(cardsWrapper);
+      }
+    }
+
+    window.requestAnimationFrame(() => {
+      calculateLayout();
+      startObservers();
+    });
+
