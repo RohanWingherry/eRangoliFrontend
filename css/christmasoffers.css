@@ -203,9 +203,11 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  max-width: 190px;
+  max-width: 170px;
   margin: auto;
 }
+
+
 
 .feature-icon,
 .unique-icon {
@@ -240,6 +242,19 @@
   color: #3a3f45;
   width: 70%;
 }
+@media (max-width:1239px) {
+  .feature-box{
+    max-width: 140px;
+  }
+  .feature-text{
+    width: 100%;
+  }
+}
+@media (max-width:1060px) {
+  .feature-box{
+    max-width: 120px;
+  }
+}
 .icon-heading {
   font-weight: 500;
   font-size: 16px;
@@ -257,7 +272,7 @@
 
 .heading-line-exclusive-crafted {
   border: 1px solid #a10404;
-  width: 215px;
+  width: 275px;
 }
 
 .crafted-grid {
@@ -333,7 +348,14 @@
 /*Collection Section*/
 .collection-section {
   width: 100%;
-  padding-top: 30px;
+  padding-top: 20px;
+  background-color: #9f040405;
+
+}
+
+.heading-line-wood {
+  border: 1px solid #a10404;
+  width: 295px;
 }
 
 .collection-grid {
@@ -389,7 +411,9 @@
 
 
       .customer-section {
-        margin: 30px 30px;
+        margin: 0px 30px;
+        background-color: #9f040405;
+
       }
 
       .heading-line-customer {
