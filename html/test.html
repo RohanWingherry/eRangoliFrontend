@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Top Categories - responsive up to 7 cards</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#A10404;
+      --accent-dark:#690404;
+      --card-gap:20px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0;font-family:"Nunito Sans",system-ui,Arial;}
+    body{background:#fff;color:#222;padding:18px;}
+
+    .heading-tag-for-section{ text-align:center; margin-bottom:12px; }
+    .heading-tag-for-section > div:first-child{ font-weight:700; font-size:18px; margin-bottom:6px; }
+    .heading-line-categories{ width:165px; height:3px; background:var(--accent); margin:0 auto; border-radius:2px; }
+
+    .top-carousel-container{ width:100%; margin:0 auto; background:white; border-radius:6px; }
+
+    .main-top-category-main{ display:flex; align-items:center; gap:12px; justify-content:center; }
+
+    .top-nav-btn{ background:transparent; border:none; cursor:pointer; padding:6px; display:inline-flex; align-items:center; justify-content:center; z-index:30; }
+    .top-nav-btn img{ width:36px; height:36px; display:block; object-fit:contain; }
+    .top-nav-btn:disabled{ opacity:.35; cursor:not-allowed; }
+
+    /* allow carousel to expand on very wide screens */
+    .top-carousel{ flex:1 1 auto; overflow:hidden; position:relative; width:100%; }
+
+    /* wrapper: no horizontal padding to avoid side sliver */
+    .top-cards-wrapper{
+      display:flex;
+      align-items:stretch;
+      gap:var(--card-gap);
+      transition:transform .42s cubic-bezier(.22,.9,.32,1);
+      will-change:transform;
+      padding:12px 0 30px; /* bottom padding for overlapping button */
+    }
+
+    .top-card{
+      position:relative;
+      border-radius:10px;
+      background-image: url("../assets/Group 5[1].png");
+      background-repeat:no-repeat;
+      background-position:center;
+      background-size:cover;
+      padding:12px;
+      min-width:0;
+      box-sizing:border-box;
+      flex:0 0 auto;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+    }
+
+    .top-category-card{
+      width:100%;
+      border-radius:8px;
+      overflow:hidden;
+      position:relative;
+      height: 180px;
+      display:block;
+    }
+
+    .top-category-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      border-radius:8px;
+    }
+
+    .top-category-label{
+      position:absolute;
+      top:12px;
+      right:12px;
+      background:#fff;
+      padding:6px 14px;
+      border-radius:8px;
+      font-size:13px;
+      font-weight:700;
+      box-shadow:0 2px 6px rgba(0,0,0,0.08);
+      z-index:4;
+    }
+
+    .top-shop-now-btn{
+      position:absolute;
+      bottom:-10px;
+      left:50%;
+      transform:translateX(-50%);
+      background:var(--accent);
+      color:#fff;
+      border:none;
+      padding:10px 30px;
+      border-radius:6px;
+      cursor:pointer;
+      font-weight:700;
+      font-size:14px;
+      white-space:nowrap;
+      transition:background .2s;
+      box-shadow: 0 2px 6px rgba(161,4,4,0.15);
+      z-index:6;
+    }
+    .top-shop-now-btn:hover{ background:var(--accent-dark); }
+
+    /* ---------------------
+       Responsive flex-basis:
+       We set exact flex-basis per number of cards to avoid partial cards
+       Formula used: flex-basis: calc((100% / N) - ((gap * (N - 1)) / N))
+       --------------------- */
+
+    /* 7 cards (>=1920) */
+    @media (min-width:1920px) {
+      .top-card { flex-basis: calc((100% / 7) - ((var(--card-gap) * 6) / 7)); }
+    }
+
+    /* 6 cards (1600 - 1919) */
+    @media (min-width:1600px) and (max-width:1919px) {
+      .top-card { flex-basis: calc((100% / 6) - ((var(--card-gap) * 5) / 6)); }
+    }
+
+    /* 5 cards (1441 - 1599) */
+    @media (min-width:1441px) and (max-width:1599px) {
+      .top-card { flex-basis: calc((100% / 5) - ((var(--card-gap) * 4) / 5)); }
+    }
+
+    /* 4 cards (1025 - 1440) */
+    @media (min-width:1025px) and (max-width:1440px) {
+      .top-card { flex-basis: calc((100% / 4) - ((var(--card-gap) * 3) / 4)); }
+    }
+
+    /* 3 cards (768 - 1252) */
+    @media (min-width:768px) and (max-width:1252px) {
+      .top-card { flex-basis: calc((100% / 3) - ((var(--card-gap) * 2) / 3)); }
+    }
+
+    /* 2 cards (425 - 767) */
+    @media (min-width:600px) and (max-width:767px) {
+      .top-card { flex-basis: calc((100% / 2) - ((var(--card-gap) * 1) / 2)); }
+    }
+
+    /* 1 card (below 425) */
+    @media (max-width:600px) {
+      .top-card { flex-basis: calc(100% - var(--card-gap)); }
+      .top-category-card { height:220px; }
+      .top-shop-now-btn { padding:8px 20px; bottom:-8px; }
+      .top-nav-btn img { width:28px; height:28px; }
+    }
+
+    /* small device tweaks */
+    @media (max-width:405px) { .top-category-card { height:150px; } }
+    @media (max-width:360px) {
+      .top-category-label { font-size:10px; padding:5px 10px; }
+      .top-shop-now-btn { padding:6px 15px; font-size:12px; }
+    }
+
+    .top-cards-wrapper:empty { min-height:240px; }
+  </style>
+</head>
+<body>
+  <section class="top-carousel-container">
+    <div class="heading-tag-for-section">
+      <div>Top Categories</div>
+      <div class="heading-line-categories"></div>
+    </div>
+
+    <div class="main-top-category-main">
+      <button id="top-prevBtn" class="top-nav-btn" aria-label="Previous" disabled>
+        <img src="../assets/CaretCircleLeft.png" alt="Prev">
+      </button>
+
+      <div class="top-carousel" id="top-carousel" role="region" aria-label="Top categories carousel">
+        <div class="top-cards-wrapper" id="top-cardsWrapper">
+          <!-- Cards: use your same image paths -->
+          <div class="top-card top-category-item">
+            <div class="top-category-card">
+              <img src="../assets/Rectangle 355.png" alt="Jewellery">
+              <span class="top-category-label">Jewellery</span>
+            </div>
+            <button class="top-shop-now-btn">Shop Now</button>
+          </div>
+
+          <div class="top-card top-category-item">
+            <div class="top-category-card">
+              <img src="../assets/Rectangle 2(1).png" alt="Kitchen ware">
+              <span class="top-category-label">Kitchen ware</span>
+            </div>
+            <button class="top-shop-now-btn">Shop Now</button>
+          </div>
+
+          <div class="top-card top-category-item">
+            <div class="top-category-card">
+              <img src="../assets/ractangle3.png" alt="Home decor">
+              <span class="top-category-label">Home decor</span>
+            </div>
+            <button class="top-shop-now-btn">Shop Now</button>
+          </div>
+
+          <div class="top-card top-category-item">
+            <div class="top-category-card">
+              <img src="../assets/Rectangle 5.png" alt="Wall Art">
+              <span class="top-category-label">Wall Art</span>
+            </div>
+            <button class="top-shop-now-btn">Shop Now</button>
+          </div>
+
+          <div class="top-card top-category-item">
+            <div class="top-category-card">
+              <img src="../assets/Rectangle 6.png" alt="Pottery">
+              <span class="top-category-label">Pottery</span>
+            </div>
+            <button class="top-shop-now-btn">Shop Now</button>
+          </div>
+
+          <!-- duplicates for testing / extra items -->
+          <div class="top-card top-category-item">
+            <div class="top-category-card">
+              <img src="../assets/Rectangle 355.png" alt="Jewellery 2">
+              <span class="top-category-label">Jewellery</span>
+            </div>
+            <button class="top-shop-now-btn">Shop Now</button>
+          </div>
+
+          <div class="top-card top-category-item">
+            <div class="top-category-card">
+              <img src="../assets/Rectangle 2(1).png" alt="Kitchen ware 2">
+              <span class="top-category-label">Kitchen ware</span>
+            </div>
+            <button class="top-shop-now-btn">Shop Now</button>
+          </div>
+
+          <div class="top-card top-category-item">
+            <div class="top-category-card">
+              <img src="../assets/ractangle3.png" alt="Home decor 2">
+              <span class="top-category-label">Home decor</span>
+            </div>
+            <button class="top-shop-now-btn">Shop Now</button>
+          </div>
+        </div>
+      </div>
+
+      <button id="top-nextBtn" class="top-nav-btn" aria-label="Next">
+        <img src="../assets/rightarrow.png" alt="Next">
+      </button>
+    </div>
+  </section>
+
+  <script>
+    (function(){
+      const wrapper = document.getElementById('top-cardsWrapper');
+      const carousel = document.getElementById('top-carousel');
+      const prevBtn = document.getElementById('top-prevBtn');
+      const nextBtn = document.getElementById('top-nextBtn');
+
+      let cards = Array.from(wrapper.querySelectorAll('.top-card'));
+      let currentIndex = 0;
+      let cardsPerView = 1;
+
+      // Keep JS rules aligned with CSS breakpoints for number of cards
+      function getCardsPerViewFromCSS(){
+        if (window.matchMedia("(min-width:1920px)").matches) return 7;
+        if (window.matchMedia("(min-width:1600px) and (max-width:1919px)").matches) return 6;
+        if (window.matchMedia("(min-width:1441px) and (max-width:1599px)").matches) return 5;
+        if (window.matchMedia("(min-width:1025px) and (max-width:1440px)").matches) return 4;
+        if (window.matchMedia("(min-width:768px) and (max-width:1252px)").matches) return 3;
+        if (window.matchMedia("(min-width:425px) and (max-width:767px)").matches) return 2;
+        return 1; // <425
+      }
+
+      function getCardFullWidth(cardEl){
+        const rect = cardEl.getBoundingClientRect();
+        const gap = parseFloat(getComputedStyle(wrapper).gap || 0);
+        return rect.width + gap;
+      }
+
+      function centerWhenAllFit(containerWidth, totalWidth){
+        if (totalWidth <= containerWidth){
+          const offset = Math.round((containerWidth - totalWidth) / 2);
+          wrapper.style.transform = `translateX(${offset}px)`;
+          prevBtn.disabled = true;
+          nextBtn.disabled = true;
+          return true;
+        }
+        return false;
+      }
+
+      function updateLayout(){
+        cards = Array.from(wrapper.querySelectorAll('.top-card'));
+        cardsPerView = getCardsPerViewFromCSS();
+        if (!cards.length) return;
+
+        const cardFullWidth = Math.round(getCardFullWidth(cards[0]));
+        const gap = parseFloat(getComputedStyle(wrapper).gap || 0);
+        const totalCards = cards.length;
+        const totalWidth = Math.round((cardFullWidth * totalCards) - gap);
+        const containerWidth = Math.floor(carousel.clientWidth);
+
+        const maxIndex = Math.max(0, totalCards - cardsPerView);
+        if (currentIndex > maxIndex) currentIndex = maxIndex;
+        if (currentIndex < 0) currentIndex = 0;
+
+        // if all cards fit -> center row
+        if (centerWhenAllFit(containerWidth, totalWidth)) return;
+
+        // For single-card mobile view: center the active card in viewport
+        let translateX;
+        if (cardsPerView === 1) {
+          translateX = - Math.round(currentIndex * cardFullWidth) + Math.round((containerWidth - cardFullWidth) / 2);
+        } else {
+          translateX = - Math.round(currentIndex * cardFullWidth);
+        }
+
+        // clamp translate so last visible chunk aligns flush right
+        const visibleWidth = Math.round(cardsPerView * cardFullWidth - gap);
+        const maxTranslate = -(totalWidth - visibleWidth);
+        if (translateX < maxTranslate) translateX = maxTranslate;
+
+        wrapper.style.transform = `translateX(${translateX}px)`;
+
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex >= maxIndex;
+      }
+
+      nextBtn.addEventListener('click', () => {
+        currentIndex += cardsPerView;
+        updateLayout();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        currentIndex -= cardsPerView;
+        updateLayout();
+      });
+
+      // Recalc on resize (debounced)
+      let resizeTimer = null;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(updateLayout, 80);
+      });
+
+      // Observe element changes (images load, DOM changes)
+      if ('ResizeObserver' in window) {
+        const ro = new ResizeObserver(() => updateLayout());
+        ro.observe(carousel);
+        ro.observe(wrapper);
+        Array.from(wrapper.children).forEach(c => ro.observe(c));
+      } else {
+        window.addEventListener('load', updateLayout);
+      }
+
+      // Ensure images are loaded before first measurement
+      window.addEventListener('load', () => {
+        const imgs = Array.from(wrapper.querySelectorAll('img'));
+        if (!imgs.length) { updateLayout(); return; }
+        let loaded = 0;
+        imgs.forEach(img => {
+          if (img.complete) {
+            loaded++;
+            if (loaded === imgs.length) updateLayout();
+          } else {
+            img.addEventListener('load', () => {
+              loaded++;
+              if (loaded === imgs.length) updateLayout();
+            }, { once: true });
+            img.addEventListener('error', () => {
+              loaded++;
+              if (loaded === imgs.length) updateLayout();
+            }, { once: true });
+          }
+        });
+      });
+
+      // initial layout
+      requestAnimationFrame(updateLayout);
+    })();
+  </script>
+</body>
+</html>

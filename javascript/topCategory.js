@@ -1,112 +1,131 @@
-// Categories Carousel
-const cardsWrapper1 = document.getElementById("top-cardsWrapper");
-    const cards1 = Array.from(document.querySelectorAll(".top-card"));
-    const prevBtn1 = document.getElementById("top-prevBtn");
-    const nextBtn1 = document.getElementById("top-nextBtn");
-    const carousel1 = document.getElementById("top-carousel");
+// Top Category Carousel
+(function(){
+      const wrapper = document.getElementById('top-cardsWrapper');
+      const carousel = document.getElementById('top-carousel');
+      const prevBtn = document.getElementById('top-prevBtn');
+      const nextBtn = document.getElementById('top-nextBtn');
 
-    let currentIndex1 = 0;
-    let cardsPerView1 = 1;
+      let cards = Array.from(wrapper.querySelectorAll('.top-card'));
+      let currentIndex = 0;
+      let cardsPerView = 1;
 
-    function getCardsPerViewFromCSS() {
-      if (window.matchMedia("(min-width:1441px)").matches) return 5;
-      if (window.matchMedia("(min-width:1025px) and (max-width:1440px)").matches) return 4;
-      if (window.matchMedia("(min-width:768px) and (max-width:1024px)").matches) return 3;
-      if (window.matchMedia("(min-width:425px) and (max-width:767px)").matches) return 2;
-      return 1; // width < 425px
-    }
-
-    function getHorizontalMargin(el) {
-      const style = getComputedStyle(el);
-      return parseFloat(style.marginLeft || 0) + parseFloat(style.marginRight || 0);
-    }
-
-    function calculateLayout() {
-      if (!cards1.length) return;
-
-      cardsPerView1 = getCardsPerViewFromCSS();
-
-      if (currentIndex1 + cardsPerView1 > cards1.length) {
-        currentIndex1 = Math.max(0, cards1.length - cardsPerView1);
+      // Keep JS rules aligned with CSS breakpoints for number of cards
+      function getCardsPerViewFromCSS(){
+        if (window.matchMedia("(min-width:1920px)").matches) return 7;
+        if (window.matchMedia("(min-width:1600px) and (max-width:1919px)").matches) return 6;
+        if (window.matchMedia("(min-width:1441px) and (max-width:1599px)").matches) return 5;
+        if (window.matchMedia("(min-width:1025px) and (max-width:1440px)").matches) return 4;
+        if (window.matchMedia("(min-width:768px) and (max-width:1252px)").matches) return 3;
+        if (window.matchMedia("(min-width:425px) and (max-width:767px)").matches) return 2;
+        return 1; // <425
       }
 
-      updateCarousel();
-    }
-
-    function updateButtons() {
-      const allVisible = cardsPerView1 >= cards1.length;
-
-      if (allVisible) {
-        prevBtn1.disabled = true;
-        nextBtn1.disabled = true;
-        return;
+      function getCardFullWidth(cardEl){
+        const rect = cardEl.getBoundingClientRect();
+        const gap = parseFloat(getComputedStyle(wrapper).gap || 0);
+        return rect.width + gap;
       }
 
-      prevBtn1.disabled = currentIndex1 === 0;
-      nextBtn1.disabled = (currentIndex1 + cardsPerView1) >= cards1.length;
-    }
+      function centerWhenAllFit(containerWidth, totalWidth){
+        if (totalWidth <= containerWidth){
+          const offset = Math.round((containerWidth - totalWidth) / 2);
+          wrapper.style.transform = `translateX(${offset}px)`;
+          prevBtn.disabled = true;
+          nextBtn.disabled = true;
+          return true;
+        }
+        return false;
+      }
 
-    function updateCarousel() {
-      if (!cards1.length) return;
+      function updateLayout(){
+        cards = Array.from(wrapper.querySelectorAll('.top-card'));
+        cardsPerView = getCardsPerViewFromCSS();
+        if (!cards.length) return;
 
-      const cardRect = cards1[0].getBoundingClientRect();
-      const cardFullWidth = Math.round(cardRect.width + getHorizontalMargin(cards1[0]));
+        const cardFullWidth = Math.round(getCardFullWidth(cards[0]));
+        const gap = parseFloat(getComputedStyle(wrapper).gap || 0);
+        const totalCards = cards.length;
+        const totalWidth = Math.round((cardFullWidth * totalCards) - gap);
+        const containerWidth = Math.floor(carousel.clientWidth);
 
-      const containerWidth = Math.floor(carousel1.clientWidth);
-      const totalCards = cards1.length;
-      const totalWidth = totalCards * cardFullWidth;
+        const maxIndex = Math.max(0, totalCards - cardsPerView);
+        if (currentIndex > maxIndex) currentIndex = maxIndex;
+        if (currentIndex < 0) currentIndex = 0;
 
-      if (totalWidth <= containerWidth) {
-        const offset = Math.round((containerWidth - totalWidth) / 2);
-        cardsWrapper1.style.transform = `translateX(${offset}px)`;
-      } else {
-        let translateX = -currentIndex1 * cardFullWidth;
+        // if all cards fit -> center row
+        if (centerWhenAllFit(containerWidth, totalWidth)) return;
 
-        const visibleWidth = cardsPerView1 * cardFullWidth;
-        const overflow = totalWidth - visibleWidth;
-
-        if (currentIndex1 + cardsPerView1 >= totalCards) {
-          translateX = -overflow;
+        // For single-card mobile view: center the active card in viewport
+        let translateX;
+        if (cardsPerView === 1) {
+          translateX = - Math.round(currentIndex * cardFullWidth) + Math.round((containerWidth - cardFullWidth) / 2);
+        } else {
+          translateX = - Math.round(currentIndex * cardFullWidth);
         }
 
-        cardsWrapper1.style.transform = `translateX(${translateX}px)`;
+        // clamp translate so last visible chunk aligns flush right
+        const visibleWidth = Math.round(cardsPerView * cardFullWidth - gap);
+        const maxTranslate = -(totalWidth - visibleWidth);
+        if (translateX < maxTranslate) translateX = maxTranslate;
+
+        wrapper.style.transform = `translateX(${translateX}px)`;
+
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex >= maxIndex;
       }
 
-      updateButtons();
-    }
+      nextBtn.addEventListener('click', () => {
+        currentIndex += cardsPerView;
+        updateLayout();
+      });
 
-    nextBtn1.addEventListener("click", () => {
-      currentIndex1 += cardsPerView1;
+      prevBtn.addEventListener('click', () => {
+        currentIndex -= cardsPerView;
+        updateLayout();
+      });
 
-      if (currentIndex1 + cardsPerView1 > cards1.length) {
-        currentIndex1 = cards1.length - cardsPerView1;
-        if (currentIndex1 < 0) currentIndex1 = 0;
-      }
+      // Recalc on resize (debounced)
+      let resizeTimer = null;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(updateLayout, 80);
+      });
 
-      updateCarousel();
-    });
-
-    prevBtn1.addEventListener("click", () => {
-      currentIndex1 -= cardsPerView1;
-      if (currentIndex1 < 0) currentIndex1 = 0;
-      updateCarousel();
-    });
-
-    let resizeObserver1 = null;
-    function startObservers() {
-      window.addEventListener("resize", calculateLayout);
-
+      // Observe element changes (images load, DOM changes)
       if ('ResizeObserver' in window) {
-        resizeObserver1 = new ResizeObserver(calculateLayout);
-        resizeObserver1.observe(carousel1);
-        resizeObserver1.observe(cardsWrapper1);
+        const ro = new ResizeObserver(() => updateLayout());
+        ro.observe(carousel);
+        ro.observe(wrapper);
+        Array.from(wrapper.children).forEach(c => ro.observe(c));
+      } else {
+        window.addEventListener('load', updateLayout);
       }
-    }
 
-    window.requestAnimationFrame(() => {
-      calculateLayout();
-      startObservers();
-    });
+      // Ensure images are loaded before first measurement
+      window.addEventListener('load', () => {
+        const imgs = Array.from(wrapper.querySelectorAll('img'));
+        if (!imgs.length) { updateLayout(); return; }
+        let loaded = 0;
+        imgs.forEach(img => {
+          if (img.complete) {
+            loaded++;
+            if (loaded === imgs.length) updateLayout();
+          } else {
+            img.addEventListener('load', () => {
+              loaded++;
+              if (loaded === imgs.length) updateLayout();
+            }, { once: true });
+            img.addEventListener('error', () => {
+              loaded++;
+              if (loaded === imgs.length) updateLayout();
+            }, { once: true });
+          }
+        });
+      });
+
+      // initial layout
+      requestAnimationFrame(updateLayout);
+    })();
 
 // traditional Marketplace Carousel
 

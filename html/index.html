@@ -212,110 +212,92 @@
     </section>
 
     <!-- Top Categories Section -->
-    <section class="top-carousel-container">
-
-      <div class="heading-tag-for-section">
-        <div>Top Categories</div>
-        <div class="heading-line-categories"></div>
-      </div>
-
-      <div class="main-top-category-main">
-        <button id="top-prevBtn" class="top-nav-btn" disabled>
-          <img src="../assets/CaretCircleLeft.png" alt="Previous" />
-        </button>
-
-        <div class="top-carousel" id="top-carousel">
-          <div class="top-cards-wrapper" id="top-cardsWrapper">
-
-            <!-- Category Cards -->
-            <div class="top-card top-category-item">
-              <div class="top-category-card">
-                <img src="../assets/Rectangle 355.png" alt="Jewellery" />
-                <span class="top-category-label">Jewellery</span>
-              </div>
-              <button class="top-shop-now-btn">Shop Now</button>
-            </div>
-
-            <div class="top-card top-category-item">
-              <div class="top-category-card">
-                <img src="../assets/Rectangle 2(1).png" alt="Kitchen ware" />
-                <span class="top-category-label">Kitchen ware</span>
-              </div>
-              <button class="top-shop-now-btn">Shop Now</button>
-            </div>
-
-            <div class="top-card top-category-item">
-              <div class="top-category-card">
-                <img src="../assets/ractangle3.png" alt="Home decor" />
-                <span class="top-category-label">Home decor</span>
-              </div>
-              <button class="top-shop-now-btn">Shop Now</button>
-            </div>
-
-            <div class="top-card top-category-item">
-              <div class="top-category-card">
-                <img src="../assets/Rectangle 5.png" alt="Wall Art" />
-                <span class="top-category-label">Wall Art</span>
-              </div>
-              <button class="top-shop-now-btn">Shop Now</button>
-            </div>
-
-            <div class="top-card top-category-item">
-              <div class="top-category-card">
-                <img src="../assets/Rectangle 6.png" alt="Pottery" />
-                <span class="top-category-label">Pottery</span>
-              </div>
-              <button class="top-shop-now-btn">Shop Now</button>
-            </div>
-
-            <div class="top-card top-category-item">
-              <div class="top-category-card">
-                <img src="../assets/Rectangle 355.png" alt="Jewellery" />
-                <span class="top-category-label">Jewellery</span>
-              </div>
-              <button class="top-shop-now-btn">Shop Now</button>
-            </div>
-
-            <div class="top-card top-category-item">
-              <div class="top-category-card">
-                <img src="../assets/Rectangle 2(1).png" alt="Kitchen ware" />
-                <span class="top-category-label">Kitchen ware</span>
-              </div>
-              <button class="top-shop-now-btn">Shop Now</button>
-            </div>
-
-            <div class="top-card top-category-item">
-              <div class="top-category-card">
-                <img src="../assets/ractangle3.png" alt="Home decor" />
-                <span class="top-category-label">Home decor</span>
-              </div>
-              <button class="top-shop-now-btn">Shop Now</button>
-            </div>
-
-            <div class="top-card top-category-item">
-              <div class="top-category-card">
-                <img src="../assets/Rectangle 5.png" alt="Wall Art" />
-                <span class="top-category-label">Wall Art</span>
-              </div>
-              <button class="top-shop-now-btn">Shop Now</button>
-            </div>
-
-            <div class="top-card top-category-item">
-              <div class="top-category-card">
-                <img src="../assets/Rectangle 6.png" alt="Pottery" />
-                <span class="top-category-label">Pottery</span>
-              </div>
-              <button class="top-shop-now-btn">Shop Now</button>
-            </div>
-
-          </div>
+      <section class="top-carousel-container">
+        <div class="heading-tag-for-section">
+          <div>Top Categories</div>
+          <div class="heading-line-categories"></div>
         </div>
 
-        <button id="top-nextBtn" class="top-nav-btn">
-          <img src="../assets/rightarrow.png" alt="Next" />
-        </button>
-      </div>
-    </section>
+        <div class="main-top-category-main">
+          <button id="top-prevBtn" class="top-nav-btn" aria-label="Previous" disabled>
+            <img src="../assets/CaretCircleLeft.png" alt="Prev">
+          </button>
+
+          <div class="top-carousel" id="top-carousel" role="region" aria-label="Top categories carousel">
+            <div class="top-cards-wrapper" id="top-cardsWrapper">
+              <!-- Cards: use your same image paths -->
+              <div class="top-card top-category-item">
+                <div class="top-category-card">
+                  <img src="../assets/Rectangle 355.png" alt="Jewellery">
+                  <span class="top-category-label">Jewellery</span>
+                </div>
+                <button class="top-shop-now-btn">Shop Now</button>
+              </div>
+
+              <div class="top-card top-category-item">
+                <div class="top-category-card">
+                  <img src="../assets/Rectangle 2(1).png" alt="Kitchen ware">
+                  <span class="top-category-label">Kitchen ware</span>
+                </div>
+                <button class="top-shop-now-btn">Shop Now</button>
+              </div>
+
+              <div class="top-card top-category-item">
+                <div class="top-category-card">
+                  <img src="../assets/ractangle3.png" alt="Home decor">
+                  <span class="top-category-label">Home decor</span>
+                </div>
+                <button class="top-shop-now-btn">Shop Now</button>
+              </div>
+
+              <div class="top-card top-category-item">
+                <div class="top-category-card">
+                  <img src="../assets/Rectangle 5.png" alt="Wall Art">
+                  <span class="top-category-label">Wall Art</span>
+                </div>
+                <button class="top-shop-now-btn">Shop Now</button>
+              </div>
+
+              <div class="top-card top-category-item">
+                <div class="top-category-card">
+                  <img src="../assets/Rectangle 6.png" alt="Pottery">
+                  <span class="top-category-label">Pottery</span>
+                </div>
+                <button class="top-shop-now-btn">Shop Now</button>
+              </div>
+
+              <!-- duplicates for testing / extra items -->
+              <div class="top-card top-category-item">
+                <div class="top-category-card">
+                  <img src="../assets/Rectangle 355.png" alt="Jewellery 2">
+                  <span class="top-category-label">Jewellery</span>
+                </div>
+                <button class="top-shop-now-btn">Shop Now</button>
+              </div>
+
+              <div class="top-card top-category-item">
+                <div class="top-category-card">
+                  <img src="../assets/Rectangle 2(1).png" alt="Kitchen ware 2">
+                  <span class="top-category-label">Kitchen ware</span>
+                </div>
+                <button class="top-shop-now-btn">Shop Now</button>
+              </div>
+
+              <div class="top-card top-category-item">
+                <div class="top-category-card">
+                  <img src="../assets/ractangle3.png" alt="Home decor 2">
+                  <span class="top-category-label">Home decor</span>
+                </div>
+                <button class="top-shop-now-btn">Shop Now</button>
+              </div>
+            </div>
+          </div>
+
+          <button id="top-nextBtn" class="top-nav-btn" aria-label="Next">
+            <img src="../assets/rightarrow.png" alt="Next">
+          </button>
+        </div>
+      </section>
 
     <!-- Banner Section -->
     <div class="banner-section-discount">
