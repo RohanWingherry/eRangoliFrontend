@@ -176,13 +176,7 @@ nav{
     background-color: #A10404;
 }
 
-/* Optional responsive */
-@media (max-width: 768px) {
-  .carousel-container { height: 300px; }
-}
-@media (max-width: 420px) {
-  .carousel-container { height: 200px; }
-}
+
 
 /* Banner section Content */
 
@@ -408,13 +402,158 @@ nav{
   to{transform:translateX(calc(var(--move) * -1))}
 }
 
-/* responsive tweaks */
-@media (max-width:900px){
-    :root{--logo-size:56px;--gap:28px}
+@media (max-width:815px) {
+
+    /* Nav Bar */
+    .menu-section .search-bar{
+        width: 200px;
+    }
+    .signup-button{
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    /* Banner Section */
+    .nav-menu{
+        gap: 15px;
+    }
+    .nav-item{
+        font-size: 14px;
+    }
+    .banner-main-content{
+        top: 200px;
+    }
+    .carousel-container { 
+        height: 400px;
+        width: 100%; 
+    }
+    .banner-heading{
+        font-size: 24px;
+        max-width: 400px;
+    }
+    .line{
+        width: 500px;
+    }
+    .small-para{
+        font-size: 14px;
+        max-width: 400px;
+    }
+    .banner-explore-btn>button{
+        padding: 8px 20px;
+        font-size: 14px;
+    }
 }
-@media (max-width:480px){
-    :root{--logo-size:44px;--gap:18px}
+
+@media (max-width:660px) {
+    /* Nav Bar */
+    nav{
+        height: 60px;
+    }
+    .middle-nav-bar{
+        top: 80px;
+    }
+     .nav-menu{
+        gap: 10px;
+        padding: 5px 10px;
+    }
+    .nav-item{
+        font-size: 12px;
+    }
+    .logo-section{
+        height: 45px;
+    }
+    .signup-button{
+        margin-left: 0px;
+    }
+    /* Banner Section */
+    .banner-heading{
+        font-size: 20px;    
+    }
+    .carousel-container { 
+        margin-top: 60px;
+        height: 300px;
+        width: 100%;
+    }
+    .banner-main-content{
+        top: 150px;
+        gap: 10px;
+    }
 }
+@media (max-width:595px) {
+    /* .middle-nav-bar, .menu-section .search-bar, .round-button, .signup-button{
+        display: none;
+    }
+    #hamburger-menu{
+        display: block; 
+    }
+    .line{
+        width: 300px;
+    } */
+}
+
+
+/* ----------------------- */
+/* HAMBURGER MENU */
+/* ----------------------- */
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    height: 4px;
+    width: 100%;
+    background-color: #A10404;
+    border-radius: 4px;
+}
+
+@media (max-width: 595px) {
+
+    .middle-nav-bar{
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .menu-section {
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        background: white;
+        width: 100%;
+        top: 75px;
+        left: 0;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        gap: 20px;
+    }
+
+    /* Show menu when active */
+    .menu-open {
+        display: flex !important;
+    }
+
+    .signup-wrapper {
+        width: 100%;
+    }
+
+    .signup-dropdown {
+        position: relative;
+        width: 100%;
+    }
+    .line{
+        width: 250px;
+    }
+}
+
+
 
 
 

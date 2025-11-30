@@ -1,3 +1,14 @@
+// Navigation Bar Interaction
+const hamburger = document.getElementById("hamburger-menu");
+const menu = document.getElementById("mobile-menu");
+
+hamburger.addEventListener("click", () => {
+    menu.classList.toggle("menu-open");
+});
+
+
+// Carousel Functionality
+
 let index = 0;
 const slide = document.querySelector('.carousel-slide');
 const images = document.querySelectorAll('.carousel-slide img');
