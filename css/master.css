@@ -119,6 +119,9 @@ nav{
     visibility: visible;
     transform: translateY(0);
 }
+#mobile-menu{
+    display: none;
+}
 
 
 
@@ -524,15 +527,9 @@ nav{
 
     .menu-section {
         display: none;
-        position: absolute;
-        flex-direction: column;
-        background: white;
-        width: 100%;
-        top: 75px;
-        left: 0;
-        padding: 20px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        gap: 20px;
+    }
+    #mobile-menu{
+        display: none;
     }
 
     /* Show menu when active */
