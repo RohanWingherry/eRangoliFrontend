@@ -356,6 +356,18 @@
   opacity: 1;
 }
 
+@media (max-width: 768px) {
+  .crafted-explore-btn {
+    bottom: 12px !important;
+    opacity: 1 !important;
+  }
+
+  .crafted-box:hover .crafted-explore-btn {
+    bottom: 12px !important;
+    opacity: 1 !important;
+  }
+}
+
 /*Collection Section*/
 .collection-section {
   width: 100%;
@@ -417,6 +429,17 @@
 .collection-box:hover .collection-explore-btn {
   bottom: 12px;
   opacity: 1;
+}
+@media (max-width: 768px) {
+  .collection-explore-btn {
+    bottom: 12px !important;
+    opacity: 1 !important;
+  }
+
+  .collection-box:hover .collection-explore-btn {
+    bottom: 12px !important;
+    opacity: 1 !important;
+  }
 }
 
 .customer-section {
