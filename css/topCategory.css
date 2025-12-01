@@ -14,22 +14,18 @@
 
 .heading-tag-for-section {
   text-align: center;
-  margin-bottom: 12px;
 }
-.heading-tag-for-section > div:first-child {
-  font-weight: 700;
-  font-size: 18px;
-  margin-bottom: 6px;
-}
+
 .heading-line-categories {
   width: 165px;
-  height: 3px;
+  height: 2px;
   background: var(--accent);
   margin: 0 auto;
   border-radius: 2px;
 }
 
 .top-carousel-container {
+  padding-top: 20px;
   width: 100%;
   margin: 0 auto;
   background: white;
@@ -37,6 +33,7 @@
 }
 
 .main-top-category-main {
+  padding-top: 10px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -1213,7 +1210,7 @@
 }
 
 /* Show and position only on mobile devices */
-@media (max-width: 767px) {
+@media (max-width: 595px) {
   .bottom-nav {
     display: flex;
     position: fixed;
@@ -1303,7 +1300,7 @@
 }
 
 /* Force bottom positioning - override any conflicts */
-@media (max-width: 767px) {
+@media (max-width: 595px) {
   .bottom-nav {
     top: auto !important;
     bottom: 0 !important;
