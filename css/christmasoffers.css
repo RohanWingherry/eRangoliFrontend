@@ -65,6 +65,19 @@
   opacity: 1;
 }
 
+@media (max-width: 768px) {
+  .explore-btn {
+    bottom: 12px !important;
+    opacity: 1 !important;
+  }
+
+  .category-box:hover .explore-btn {
+    bottom: 12px !important;
+    opacity: 1 !important;
+  }
+}
+
+
 /*Banner Section*/
 .promo-banner {
   width: 100%;
