@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/login.css">
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <!-- LEFT PANEL -->
+      <div class="custumerLoginLeftPanel">
+        <div class="custumerLoginHeader">
+          <h1 class="custumerLoginTitle">Login</h1>
+        </div>
+
+        <!-- FORM SECTION -->
+        <div class="custumerLoginFormWrapper">
+          <form class="custumerLoginForm" id="custumerLoginForm">
+            <div class="custumerLoginFormGroup">
+              <label class="custumerLoginLabel" for="custumerLoginMobile">
+                Mobile Number
+              </label>
+              <input
+                type="tel"
+                id="custumerLoginMobile"
+                class="custumerLoginInput"
+                placeholder="95367 89905"
+                maxlength="10"
+              />
+              <span id="mobileError" class="errorText" style="display: none"
+                >Invalid Number</span
+              >
+            </div>
+
+            <div class="custumerLoginFormGroup">
+              <label class="custumerLoginLabel" for="custumerLoginOTP">
+                OTP
+              </label>
+
+              <input
+                type="text"
+                id="custumerLoginOTP"
+                class="custumerLoginInput"
+                placeholder="Enter OTP"
+                maxlength="6"
+              />
+
+              <div
+                class="custumerLoginOtpRow"
+                id="otpExtraRow"
+                style="display: none"
+              >
+                <span id="otpError" class="errorText" style="display: none"
+                  >Invalid OTP</span
+                >
+
+                <div class="custumerLoginOtpActions">
+                  <button
+                    type="button"
+                    id="resendOtpBtn"
+                    class="custumerLoginResend"
+                    disabled
+                  >
+                    Resend code...
+                  </button>
+                  <span id="otpTimer" class="custumerLoginTimer">00:30</span>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="custumerLoginButton">Sign Up</button>
+          </form>
+
+          <div class="custumerLoginDivider">or</div>
+
+          <div class="custumerLoginSocialButtons">
+            <button class="custumerLoginSocialButton" id="custumerLoginGoogle">
+              <img src="../assets/google.svg" class="custumerLoginSocialIcon" />
+              Continue with Google
+            </button>
+
+            <button class="custumerLoginSocialButton" id="custumerLoginFacebook">
+              <img src="../assets/facebook.svg" class="custumerLoginSocialIcon"/>
+              Continue with Facebook
+            </button>
+
+            <button class="custumerLoginSocialButton" id="custumerLoginApple">
+              <img src="../assets/appleImage.svg" class="custumerLoginSocialIcon"/>Continue with Apple
+            </button>
+          </div>
+
+          <div class="custumerLoginSkip" id="custumerLoginSkip">
+            Skip for now
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="custumerLoginRightPanel">
+        <div class="custumerLoginHeroCenter">
+          <div class="custumerLoginHeroCard">
+            <h2 class="custumerLoginHeroTitle">
+              Trending<br />
+              Collection
+            </h2>
+            <p class="custumerLoginHeroSubtitle">
+              Handcrafted Finds to<br />
+              Elevate Every Corner.
+            </p>
+            <p class="custumerLoginHeroTagline">
+              Hurry up for exclusive collections
+            </p>
+          </div>
+          <button class="custumerLoginCTA">Become a seller</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../javascript/login.js"></script>
+  </body>
+</html>
