@@ -1272,10 +1272,7 @@
     margin-top: 2px;
     white-space: nowrap;
   }
-  
-  body {
-    padding-bottom: 75px !important;
-  }
+
 }
 
 /* Extra small devices */
@@ -1294,9 +1291,7 @@
     font-size: 10px;
   }
   
-  body {
-    padding-bottom: 70px !important;
-  }
+
 }
 
 /* Force bottom positioning - override any conflicts */
