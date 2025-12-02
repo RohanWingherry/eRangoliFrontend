@@ -152,15 +152,6 @@
   margin: auto;
 }
 
-@media (max-width: 768px) {
-  .ma-artist-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 30px 20px;
-    /* width: ; */
-  }
-}
-
 .ma-card.ma-active {
   transform: scale(1);
   opacity: 1;
@@ -199,7 +190,112 @@
   opacity: 1;
   scale: 1.1;
 }
+@media (max-width: 768px) {
+  .ma-artist-card {
+    max-width: 680px;
+    width: 100%;
+    /* flex-direction: column; */
+    text-align: center;
+    padding: 30px 20px;
+    /* width: ; */
+  }
+}
+/* =====================================================
+      FINAL FIX — PERFECT FIT ON SMALL SCREENS (<=660px)
+===================================================== */
+@media (max-width: 660px) {
 
+  /* Each card fits the full screen width */
+  .ma-card {
+    min-width: 96%;
+    max-width: 96%;
+    transform: scale(1) !important;
+    opacity: 1 !important;
+    padding: 0px; /* slight padding to avoid touching edges */
+    box-sizing: border-box;
+  }
+
+  /* Card inner container */
+  .ma-artist-card {
+    max-width: 100% !important;   /* REMOVE 720px restriction */
+    width: 100%;
+    padding: 18px 15px;           /* reduced padding to fit */
+    gap: 15px;
+    display: flex;
+    flex-direction: row;          /* keep horizontal */
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  /* Left Section — Image */
+  .ma-artist-left {
+    width: 40%;
+  }
+
+  .ma-artist-left img {
+    width: 100%;
+    max-width: 160px;             /* shrink properly */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50px;
+  }
+
+  /* Right Section — Text */
+  .ma-artist-right {
+    width: 60%;
+    text-align: center;
+  }
+
+  .ma-artist-right h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .ma-subtitle {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .ma-line {
+    width: 70px;
+    height: 2px;
+    margin: 8px 0;
+  }
+
+  .ma-desc {
+    max-width: 100%;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    white-space: normal;          /* FIX overflow */
+    text-align: center;
+    line-height: 1.3;
+  }
+}
+@media (max-width:360px) {
+      .ma-card {
+    min-width: 94%;
+    max-width: 94%;
+      }
+    .ma-artist-right h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .ma-subtitle {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+  .ma-desc{
+    font-size: 10px;
+  }
+  .ma-card.ma-active {
+    transform: scale(0.1);
+    opacity: 1;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border-radius: 15px;
+  }
+}
 /* end */
 
 /* featured */
