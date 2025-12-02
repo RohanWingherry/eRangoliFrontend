@@ -673,5 +673,19 @@
     margin-top: 40px;
   }
 }
+@media (max-width:425px) {
+    .heading-line-exclusive-meet{
+        width: 150px;
+  }
+  .heading-line-wood{
+        width: 220px;
+  }
+  .heading-line-featured{
+        width: 120px;
+  }
+  .heading-line-customer{
+        width: 170px;
+  }
+}
 
 /* end */

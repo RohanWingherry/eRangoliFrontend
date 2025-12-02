@@ -708,6 +708,10 @@ nav{
     .line{
         width: 250px;
     }
+
+    .heading-tag-for-section>div{
+        font-size: 18px;
+    }
 }
 
 
