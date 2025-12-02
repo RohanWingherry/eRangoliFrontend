@@ -119,8 +119,165 @@ nav{
     visibility: visible;
     transform: translateY(0);
 }
-#mobile-menu{
-    display: none;
+/* container for the whole mobile menu */
+#mobile-menu {
+  display: none; /* keep as you already had for desktop */
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  overflow-y: auto;
+  max-height: calc(100vh - 60px);
+  z-index: 9999;
+  padding-bottom: 80px;
+}
+
+/* dropdown item wrapper */
+.mobile-dropdown {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: transparent;
+}
+
+/* header that user clicks */
+.dropdown-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+/* arrow transition/rotation */
+.arrow {
+  transition: transform 0.25s ease;
+}
+
+/* collapsed submenu (hidden) */
+/* remove display:flex here — use block so height controls work reliably */
+.mobile-submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.25s ease, opacity 0.25s ease;
+  margin: 0;
+  list-style: none;
+  background-color: #F6F6F6;
+  opacity: 0;
+  pointer-events: none;      /* prevent focus/click when closed */
+}
+
+.mobile-submenu>li:hover{
+    background-color: #EFDFDF;
+}
+
+/* items inside submenu */
+.mobile-submenu > li {
+  padding: 10px 20px;
+  color: #3F3F3F;
+  font-weight: 400;
+}
+
+/* opened state */
+.mobile-dropdown.open .dropdown-header{
+    background-color: #a1040411;
+}
+.mobile-dropdown.open .mobile-submenu {
+  max-height: 600px; /* enough to show content, a large value works for animation */
+  opacity: 1;
+  pointer-events: auto;
+  width: 100%;
+  border-radius: 4px;
+}
+
+
+.mobile-dropdown.open .arrow {
+    transform: rotate(180deg);
+}
+.welcome-main-section{
+    background-image: url("../assets/backgroundimage.png");
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background-color: #a1040413;
+}
+.welcome-text-section{
+    display: flex;
+    flex-direction: column;
+}
+.welcome-text-section>span{
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+}
+.welcome-text-section>a{
+    color: #A10404;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.main-bottom-section{
+    background-color: #f7f7f7;
+}
+.sub-section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+}
+.sub-section>span{
+    color: #3F3F3F;
+    font-size: 18px;
+    font-weight: 600;
+}
+.mobile-nav-menu{
+    margin-top: 10px;
+    background-color: white;
+    list-style: none;
+    border-radius: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mobile-nav-menu.not-logged-in{
+    background-color: #D9D9D9;
+}
+.mobile-nav-menu.not-logged-in .mobile-icon{
+    background-color: #8E8989;
+}
+.mobile-nav-menu.not-logged-in .mobile-icon>img{
+    mix-blend-mode: multiply;
+    opacity: 0.8;
+}
+.mobile-nav-menu>li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.mobile-icon-main{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.mobile-nav-menu .mobile-icon{
+    background-color: #EFDFDF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+
+}
+.mobile-icon-main>span{
+    font-size: 16px;
+    font-weight: 500;
+    color: #3F3F3F;
 }
 
 
@@ -399,6 +556,7 @@ nav{
   animation-play-state:paused;
 }
 
+
 /* keyframes - translate by CSS variable --move px which JS sets */
 @keyframes marquee{
   from{transform:translateX(0)}
@@ -528,6 +686,7 @@ nav{
     .menu-section {
         display: none;
     }
+
     #mobile-menu{
         display: none;
     }
@@ -535,6 +694,7 @@ nav{
     /* Show menu when active */
     .menu-open {
         display: flex !important;
+        flex-direction: column;
     }
 
     .signup-wrapper {
