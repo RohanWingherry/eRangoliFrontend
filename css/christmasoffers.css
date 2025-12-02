@@ -620,7 +620,36 @@ body {
     min-width: calc(100% / 1 - 20px); /* Still full width */
   }
 }
+/* ---------- MOBILE  Custumer Card ---------- */
+@media (max-width: 767px) {
 
+  .customer-card {
+    min-width: 100%;      
+  }
+
+  .customer-desc {
+    width: auto;
+  }
+
+  .customer-arrow-btn {
+    top: 55px;             
+    transform: translateY(0);
+  }
+
+  .customer-arrow-btn.customer-left {
+    left: -30px;
+    margin-left: 0;
+  }
+
+  .customer-arrow-btn.customer-right {
+    right: -30px;
+    margin-right: 0;
+  }
+
+  .customer-box-customer {
+    padding: 20px 10px;
+  }
+}
 /*responsive*/
 @media (max-width: 1024px) and (min-width: 768px) {
   .heading-tag-for-section > div {
