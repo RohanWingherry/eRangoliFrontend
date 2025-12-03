@@ -1,71 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vendor Login</title>
     <link rel="stylesheet" href="../css/vendorLogin.css" />
-</head>
-<body>
-
-<div class="vendorLoginPage">
-
-    <!-- LEFT LOGIN BOX -->
-    <div class="vendorLoginLeft">
-
+  </head>
+  <body>
+    <div class="vendorLoginPage">
+      <!-- LEFT LOGIN BOX -->
+      <div class="vendorLoginLeft">
         <div class="vendorLoginHeader">
-            <h1 class="vendorLoginTitle">Login</h1>
+          <h1 class="vendorLoginTitle">Login</h1>
         </div>
 
         <p class="vendorLoginSubtitle">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
 
         <form class="vendorLoginForm" id="vendorLoginForm">
+          <div class="vendorLoginGroup">
+            <label class="vendorLoginLabel" for="vendorLoginMobile"
+              >Username / Mobile Number</label
+            >
+            <input
+              type="text"
+              id="vendorLoginMobile"
+              class="vendorLoginInput"
+              placeholder="95367 89905"
+              maxlength="50"
+            />
+            <span id="vendorLoginMobileError" class="vendorLoginError"></span>
+          </div>
 
-            <div class="vendorLoginGroup">
-                <label class="vendorLoginLabel" for="vendorLoginMobile">Username / Mobile Number</label>
-                <input type="text" id="vendorLoginMobile" class="vendorLoginInput" placeholder="95367 89905" maxlength="50" />
-                <span id="vendorLoginMobileError" class="vendorLoginError"></span>
-            </div>
+          <div class="vendorLoginGroup">
+            <label class="vendorLoginLabel" for="vendorLoginPassword"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="vendorLoginPassword"
+              class="vendorLoginInput"
+              placeholder="Enter Password"
+            />
+            <a href="#" class="vendorLoginForgot">Forgot Password</a>
+            <span id="vendorLoginPasswordError" class="vendorLoginError"></span>
+          </div>
 
-            <div class="vendorLoginGroup">
-                <label class="vendorLoginLabel" for="vendorLoginPassword">Password</label>
-                <input type="password" id="vendorLoginPassword" class="vendorLoginInput" placeholder="Enter Password" />
-                <a href="#" class="vendorLoginForgot">Forgot Password</a>
-                <span id="vendorLoginPasswordError" class="vendorLoginError"></span>
-            </div>
-
-            <button type="submit" class="vendorLoginButton">Login</button>
-
+          <button type="submit" class="vendorLoginButton">Login</button>
         </form>
 
         <!-- SUCCESS MESSAGE -->
-        <div class="vendorLoginSuccessMsg" id="vendorLoginSuccessMsg" style="display:none;">
-            Your account has been created successfully! <br />
-            You can login your account in 24 hours once verified and approved. <br />
-            Credentials will be sent to your registered number.
-            <span class="vendorLoginCloseSuccess" id="vendorLoginCloseSuccess">✕</span>
+        <div
+          class="vendorLoginSuccessMsg"
+          id="vendorLoginSuccessMsg"
+          style="display: none"
+        >
+          Your account has been created successfully! <br />
+          You can login your account in 24 hours once verified and approved.
+          <br />
+          Credentials will be sent to your registered number.
+          <span class="vendorLoginCloseSuccess" id="vendorLoginCloseSuccess"
+            >✕</span
+          >
         </div>
 
-    </div>
+        <!-- RESET LINK MESSAGE -->
+        <div
+          class="vendorLoginSuccessMsg"
+          id="vendorLoginResetSuccess"
+          style="display: none"
+        >
+          Details sent to the registered mobile number
+          <span class="vendorLoginCloseSuccess" id="vendorLoginCloseReset"
+            >✕</span
+          >
+        </div>
+      </div>
 
-    <!-- RIGHT SIDE BANNER -->
-    <div class="vendorLoginRight">
-
+      <!-- RIGHT SIDE BANNER -->
+      <div class="vendorLoginRight">
         <div class="vendorLoginHeroCard">
-            <h2 class="vendorLoginHeroTitle">Get easy <br> EMI loan</h2>
-            <p class="vendorLoginHeroSubtitle">
-                Handcrafted Finds to <br> Elevate Every Corner.
-            </p>
-            <p class="vendorLoginHeroTagline">Hurry up for exclusive collections</p>
+          <h2 class="vendorLoginHeroTitle">
+            Get easy <br />
+            EMI loan
+          </h2>
+          <p class="vendorLoginHeroSubtitle">
+            Handcrafted Finds to <br />
+            Elevate Every Corner.
+          </p>
+          <p class="vendorLoginHeroTagline">
+            Hurry up for exclusive collections
+          </p>
         </div>
-
+      </div>
     </div>
 
-</div>
+    <!-- RESET PASSWORD SCREEN -->
+    <div class="vendorResetPage" id="vendorResetPage" style="display: none">
+      <div class="vendorResetCard">
+        <h2 class="vendorResetTitle">Reset Password</h2>
+        <p class="vendorResetText">
+          Please enter your registered email or mobile number to<br />
+          reset your password
+        </p>
 
-<script src="../javascript/vendorLogin.js"></script>
+        <form id="vendorResetForm">
+          <div class="vendorResetGroup">
+            <label class="vendorResetLabel" for="vendorResetUser">
+              Username / Mobile Number
+            </label>
+            <input
+              type="text"
+              id="vendorResetUser"
+              class="vendorResetInput"
+              placeholder="davidjohn23@gmail.com"
+            />
+                <span id="vendorResetUserError" class="vendorLoginError"></span>
+          </div>
 
-</body>
+          <button type="submit" class="vendorResetButton">
+            Request reset link
+          </button>
+        </form>
+
+        <a href="#" class="vendorResetBack" id="vendorResetBack">
+          Back to login
+        </a>
+      </div>
+    </div>
+
+    <script src="../javascript/vendorLogin.js"></script>
+  </body>
 </html>
