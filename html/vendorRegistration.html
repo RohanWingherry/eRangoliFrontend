@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vendor Registration</title>
+    <link rel="stylesheet" href="../css/vendorRegistration.css" />
+  </head>
+  <body>
+    <!-- VENDOR REGISTRATION PAGE -->
+    <div class="vendorRegistrationPage">
+      <div class="vendorRegistrationCard" id="vendorRegistrationCard">
+        <!-- HEADER -->
+        <div class="vendorRegistrationHeader">
+          <h1 class="vendorRegistrationTitle">Register</h1>
+        </div>
+
+        <!-- PROGRESS STEPS -->
+        <div class="vendorRegistrationStepsWrapper">
+          <div class="vendorRegistrationSteps">
+            <div class="vendorRegistrationStep active"></div>
+            <div class="vendorRegistrationStep"></div>
+            <div class="vendorRegistrationStep"></div>
+            <div class="vendorRegistrationStep"></div>
+            <div class="vendorRegistrationStep"></div>
+          </div>
+        </div>
+
+        <!-- ALL STEPS CONTENT -->
+        <div class="vendorRegistrationFormWrapper">
+          <!-- STEP 1 -->
+          <div
+            id="vendorRegistrationStep1"
+            class="vendorRegistrationStepContent"
+          >
+            <h2 class="vendorRegistrationSectionTitle">Personal Details</h2>
+
+            <form
+              class="vendorRegistrationForm"
+              id="vendorRegistrationFormStep1"
+            >
+              <!-- Full Name -->
+              <div class="vendorRegistrationFormGroup">
+                <label
+                  class="vendorRegistrationLabel"
+                  for="vendorRegistrationFullName"
+                  >Full Name *</label
+                >
+                <input
+                  type="text"
+                  id="vendorRegistrationFullName"
+                  class="vendorRegistrationInput"
+                  placeholder="David John"
+                />
+                <span
+                  id="vendorRegistrationFullNameError"
+                  class="vendorRegistrationErrorText"
+                ></span>
+              </div>
+
+              <!-- Mobile Number -->
+              <div class="vendorRegistrationFormGroup">
+                <label
+                  class="vendorRegistrationLabel"
+                  for="vendorRegistrationMobile"
+                  >Mobile Number *</label
+                >
+                <input
+                  type="tel"
+                  id="vendorRegistrationMobile"
+                  class="vendorRegistrationInput"
+                  placeholder="95367 89905"
+                  maxlength="10"
+                />
+                <span
+                  id="vendorRegistrationMobileError"
+                  class="vendorRegistrationErrorText"
+                ></span>
+              </div>
+
+              <!-- Email -->
+              <div class="vendorRegistrationFormGroup">
+                <label
+                  class="vendorRegistrationLabel"
+                  for="vendorRegistrationEmail"
+                >
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  id="vendorRegistrationEmail"
+                  class="vendorRegistrationInput"
+                  placeholder="davidjohn23@gmail.com"
+                />
+              </div>
+
+              <!-- Designation -->
+              <div class="vendorRegistrationFormGroup">
+                <label
+                  class="vendorRegistrationLabel"
+                  for="vendorRegistrationDesignation"
+                  >Designation
+                </label>
+                <input
+                  type="text"
+                  id="vendorRegistrationDesignation"
+                  class="vendorRegistrationInput"
+                  placeholder="Artisan"
+                />
+              </div>
+
+              <!-- Gender -->
+              <div class="vendorRegistrationFormGroup">
+                <label
+                  class="vendorRegistrationLabel"
+                  for="vendorRegistrationGender"
+                >
+                  Gender
+                </label>
+                <select
+                  id="vendorRegistrationGender"
+                  class="vendorRegistrationInput vendorRegistrationSelect"
+                >
+                  <option value="">Female</option>
+                  <option value="male">Male</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <!-- Identity Proof -->
+              <div class="vendorRegistrationFormGroup">
+                <label
+                  class="vendorRegistrationLabel"
+                  for="vendorRegistrationIdType"
+                >
+                  Select the Identity Proof</label
+                >
+                <select
+                  id="vendorRegistrationIdType"
+                  class="vendorRegistrationInput vendorRegistrationSelect"
+                >
+                  <option value="">Aadhar Card</option>
+                  <option value="pan">PAN Card</option>
+                  <option value="voter">Voter ID</option>
+                  <option value="passport">Passport</option>
+                </select>
+              </div>
+
+              <!-- Identity Number -->
+              <div class="vendorRegistrationFormGroup">
+                <label
+                  class="vendorRegistrationLabel"
+                  for="vendorRegistrationIdNumber"
+                >
+                  Mention Identity Number (of the selected identity
+                  proof)</label
+                >
+                <input
+                  type="text"
+                  id="vendorRegistrationIdNumber"
+                  class="vendorRegistrationInput"
+                  placeholder="2546 6778 7744 6778"
+                />
+              </div>
+
+              <!-- BUTTON -->
+              <button type="submit" class="vendorRegistrationButton">
+                Continue
+              </button>
+            </form>
+          </div>
+
+          <!-- STEP 2 -->
+          <div
+            id="vendorRegistrationStep2"
+            class="vendorRegistrationStepContent"
+            style="display: none"
+          >
+            <div class="vendorRegistrationUploadWrapper">
+              <label class="vendorRegistrationLabel ">
+                Identity Proof (Front/Back)
+              </label>
+              <label class="vendorRegistrationUploadBox" for="vendorIdUpload">
+                <span class="vendorRegistrationUploadPlus"
+                  ><img src="../assets/PlusCircle.svg" alt=""
+                /></span>
+                <span class="vendorRegistrationUploadIcon"
+                  ><img src="../assets/UploadSimple.svg" alt=""
+                /></span>
+                <span>Upload</span>
+                <input
+                  type="file"
+                  id="vendorIdUpload"
+                  style="display: none"
+                  accept="image/*,.pdf"
+                />
+              </label>
+            </div>
+
+            <h2 class="vendorRegistrationSectionTitle">Permanent Address</h2>
+
+            <form
+              class="vendorRegistrationForm"
+              id="vendorRegistrationFormStep2"
+            >
+              <div class="vendorRegistrationFormGroup">
+                <label class="vendorRegistrationLabel"  
+                  >House No/ Society *</label
+                >
+                <input
+                  type="text"
+                  id="vendorAddressHouse"
+                  class="vendorRegistrationInput"
+                  placeholder="C - 605 , Eden Park"
+                />
+                <span
+                  class="vendorRegistrationErrorText"
+                  id="vendorAddressHouseError"
+                ></span>
+              </div>
+
+              <div class="vendorRegistrationFormGroup">
+                <label class="vendorRegistrationLabel">Area / Lane *</label>
+                <input
+                  type="text"
+                  id="vendorAddressArea"
+                  class="vendorRegistrationInput"
+                  placeholder="Mudhuban colony, parsi road"
+                />
+                <span
+                  class="vendorRegistrationErrorText"
+                  id="vendorAddressAreaError"
+                ></span>
+              </div>
+
+              <div class="vendorRegistrationFormGroup">
+                <label class="vendorRegistrationLabel"
+                  >Landmark (Optional)</label
+                >
+                <input
+                  type="text"
+                  id="vendorAddressLandmark"
+                  class="vendorRegistrationInput"
+                  placeholder="Near Appolo Hospital"
+                />
+              </div>
+
+              <div class="vendorRegistrationRow">
+                <div class="vendorRegistrationFormGroup vendorRegistrationHalf">
+                  <label class="vendorRegistrationLabel">City *</label>
+                  <input
+                    type="text"
+                    id="vendorAddressCity"
+                    class="vendorRegistrationInput"
+                    placeholder="Pune"
+                  />
+                  <span
+                    class="vendorRegistrationErrorText"
+                    id="vendorAddressCityError"
+                  ></span>
+                </div>
+
+                <div class="vendorRegistrationFormGroup vendorRegistrationHalf">
+                  <label class="vendorRegistrationLabel">Zipcode *</label>
+                  <input
+                    type="text"
+                    id="vendorAddressZipcode"
+                    class="vendorRegistrationInput"
+                    placeholder="234 678"
+                  />
+                  <span
+                    class="vendorRegistrationErrorText"
+                    id="vendorAddressZipcodeError"
+                  ></span>
+                </div>
+              </div>
+
+              <div class="vendorRegistrationFormGroup">
+                <label class="vendorRegistrationLabel">State *</label>
+                <input
+                  type="text"
+                  id="vendorAddressState"
+                  class="vendorRegistrationInput"
+                  placeholder="Maharashtra"
+                />
+                <span
+                  class="vendorRegistrationErrorText"
+                  id="vendorAddressStateError"
+                ></span>
+              </div>
+
+              <button
+                type="button"
+                class="vendorRegistrationButton"
+                id="vendorRegistrationStep2Continue"
+              >
+                Continue
+              </button>
+            </form>
+          </div>
+
+          <!-- STEP 3 -->
+          <div
+            id="vendorRegistrationStep3"
+            class="vendorRegistrationStepContent"
+            style="display: none"
+          >
+            <h2 class="vendorRegistrationSectionTitle">Business Details</h2>
+
+            <form
+              class="vendorRegistrationForm"
+              id="vendorRegistrationFormStep3"
+            >
+              <!-- Business Name -->
+              <div class="vendorRegistrationFormGroup">
+                <label class="vendorRegistrationLabel">Business Name *</label>
+                <input
+                  type="text"
+                  id="vendorBusinessName"
+                  class="vendorRegistrationInput"
+                  placeholder="David John"
+                />
+                <span
+                  class="vendorRegistrationErrorText"
+                  id="vendorBusinessNameError"
+                ></span>
+              </div>
+
+              <!-- Mobile -->
+              <div class="vendorRegistrationFormGroup">
+                <label class="vendorRegistrationLabel">Mobile Number *</label>
+                <input
+                  type="tel"
+                  id="vendorBusinessMobile"
+                  class="vendorRegistrationInput"
+                  placeholder="95367 89905"
+                  maxlength="10"
+                />
+                <span
+                  class="vendorRegistrationErrorText"
+                  id="vendorBusinessMobileError"
+                ></span>
+              </div>
+
+              <!-- Email -->
+              <div class="vendorRegistrationFormGroup">
+                <label class="vendorRegistrationLabel">Email Address *</label>
+                <input
+                  type="email"
+                  id="vendorBusinessEmail"
+                  class="vendorRegistrationInput"
+                  placeholder="davidjohn23@gmail.com"
+                />
+                <span
+                  class="vendorRegistrationErrorText"
+                  id="vendorBusinessEmailError"
+                ></span>
+              </div>
+
+              <!-- GST Number -->
+              <div class="vendorRegistrationFormGroup">
+                <label class="vendorRegistrationLabel">GST Number *</label>
+                <input
+                  type="text"
+                  id="vendorBusinessGST"
+                  class="vendorRegistrationInput"
+                  placeholder="3456 6776 6788 6778"
+                />
+                <span
+                  class="vendorRegistrationErrorText"
+                  id="vendorBusinessGSTError"
+                ></span>
+              </div>
+
+              <!-- Upload Business Logo -->
+              <div class="vendorRegistrationUploadWrapper">
+                <label class="vendorRegistrationLabel"
+                  >Upload Business Logo</label
+                >
+
+                <label
+                  class="vendorRegistrationUploadBox"
+                  for="vendorBusinessLogo"
+                >
+                  <span class="vendorRegistrationUploadPlus"><img src="../assets/PlusCircle.svg" alt=""></span>
+                  <span class="vendorRegistrationUploadIcon"><img src="../assets/UploadSimple.svg" alt=""></span>
+                  <span>Upload</span>
+                  <input
+                    type="file"
+                    id="vendorBusinessLogo"
+                    style="display: none"
+                    accept="image/*"
+                  />
+                </label>
+              </div>
+
+              <button
+                type="button"
+                class="vendorRegistrationButton"
+                id="vendorRegistrationStep3Continue"
+              >
+                Continue
+              </button>
+            </form>
+          </div>
+
+          <!-- STEP 4 -->
+          <div
+            id="vendorRegistrationStep4"
+            class="vendorRegistrationStepContent"
+            style="display: none"
+          >
+            <h2 class="vendorRegistrationSectionTitle">Shipping Address</h2>
+
+            <!-- Same as permanent address checkbox -->
+            <div
+              class="vendorRegistrationFormGroup"
+              style="margin-bottom: 10px"
+            >
+              <label
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  font-size: 13px;
+                "
+              >
+                <input type="checkbox" id="shippingSameAsPermanent" />
+                Same as permanent address
+              </label>
+            </div>
+
+            <form
+              class="vendorRegistrationForm"
+              id="vendorRegistrationFormStep4"
+            >
+              <!-- House No -->
+              <div class="vendorRegistrationFormGroup">
+                <label class="vendorRegistrationLabel"
+                  >House No/ Society *</label
+                >
+                <input
+                  type="text"
+                  id="shippingHouse"
+                  class="vendorRegistrationInput"
+                />
+                <span
+                  class="vendorRegistrationErrorText"
+                  id="shippingHouseError"
+                ></span>
+              </div>
+
+              <!-- Area -->
+              <div class="vendorRegistrationFormGroup">
+                <label class="vendorRegistrationLabel">Area / Lane *</label>
+                <input
+                  type="text"
+                  id="shippingArea"
+                  class="vendorRegistrationInput"
+                />
+                <span
+                  class="vendorRegistrationErrorText"
+                  id="shippingAreaError"
+                ></span>
+              </div>
+
+              <!-- Landmark -->
+              <div class="vendorRegistrationFormGroup">
+                <label class="vendorRegistrationLabel"
+                  >Landmark (Optional)</label
+                >
+                <input
+                  type="text"
+                  id="shippingLandmark"
+                  class="vendorRegistrationInput"
+                />
+              </div>
+
+              <!-- City + Zip -->
+              <div class="vendorRegistrationRow">
+                <div class="vendorRegistrationFormGroup vendorRegistrationHalf">
+                  <label class="vendorRegistrationLabel ">City *</label>
+                  <input
+                    type="text"
+                    id="shippingCity"
+                    class="vendorRegistrationInput vendorRegistrationCityInput"
+                  />
+                  <span
+                    class="vendorRegistrationErrorText"
+                    id="shippingCityError"
+                  ></span>
+                </div>
+
+                <div class="vendorRegistrationFormGroup vendorRegistrationHalf">
+                  <label class="vendorRegistrationLabel">Zipcode *</label>
+                  <input
+                    type="text"
+                    id="shippingZipcode"
+                    class="vendorRegistrationInput"
+                  />
+                  <span
+                    class="vendorRegistrationErrorText"
+                    id="shippingZipcodeError"
+                  ></span>
+                </div>
+              </div>
+
+              <!-- State -->
+              <div class="vendorRegistrationFormGroup">
+                <label class="vendorRegistrationLabel">State *</label>
+                <input
+                  type="text"
+                  id="shippingState"
+                  class="vendorRegistrationInput"
+                />
+                <span
+                  class="vendorRegistrationErrorText"
+                  id="shippingStateError"
+                ></span>
+              </div>
+
+              <button
+                type="button"
+                class="vendorRegistrationButton"
+                id="vendorRegistrationStep4Continue"
+              >
+                Continue
+              </button>
+            </form>
+          </div>
+
+          <!-- STEP 5 -->
+          <div
+            id="vendorRegistrationStep5"
+            class="vendorRegistrationStepContent"
+            style="display: none"
+          >
+            <h2 class="vendorRegistrationSectionTitle">
+              Business Bank Details
+            </h2>
+
+            <form
+              class="vendorRegistrationForm"
+              id="vendorRegistrationFormStep5"
+            >
+              <!-- Bank Name -->
+              <div class="vendorRegistrationFormGroup">
+                <label class="vendorRegistrationLabel">Bank Name *</label>
+                <input
+                  type="text"
+                  id="vendorBankName"
+                  class="vendorRegistrationInput"
+                  placeholder="Bank of India"
+                />
+                <span
+                  class="vendorRegistrationErrorText"
+                  id="vendorBankNameError"
+                ></span>
+              </div>
+
+              <!-- Branch Name -->
+              <div class="vendorRegistrationFormGroup">
+                <label class="vendorRegistrationLabel">Branch Name *</label>
+                <input
+                  type="text"
+                  id="vendorBankBranch"
+                  class="vendorRegistrationInput"
+                  placeholder="Srikalahasthi Branch"
+                />
+                <span
+                  class="vendorRegistrationErrorText"
+                  id="vendorBankBranchError"
+                ></span>
+              </div>
+
+              <!-- Account Holder Name -->
+              <div class="vendorRegistrationFormGroup">
+                <label class="vendorRegistrationLabel"
+                  >Account holder Name *</label
+                >
+                <input
+                  type="text"
+                  id="vendorBankAccountHolder"
+                  class="vendorRegistrationInput"
+                  placeholder="David John"
+                />
+                <span
+                  class="vendorRegistrationErrorText"
+                  id="vendorBankAccountHolderError"
+                ></span>
+              </div>
+
+              <!-- Account Number -->
+              <div class="vendorRegistrationFormGroup">
+                <label class="vendorRegistrationLabel">Account Number *</label>
+                <input
+                  type="text"
+                  id="vendorBankAccountNumber"
+                  class="vendorRegistrationInput"
+                  placeholder="3456 6776 6788 6778"
+                />
+                <span
+                  class="vendorRegistrationErrorText"
+                  id="vendorBankAccountNumberError"
+                ></span>
+              </div>
+
+              <!-- IFSC Code -->
+              <div class="vendorRegistrationFormGroup">
+                <label class="vendorRegistrationLabel">IFSC Code *</label>
+                <input
+                  type="text"
+                  id="vendorBankIFSC"
+                  class="vendorRegistrationInput"
+                  placeholder="BKID0005719"
+                />
+                <span
+                  class="vendorRegistrationErrorText"
+                  id="vendorBankIFSCError"
+                ></span>
+              </div>
+
+              <!-- Terms & Conditions -->
+              <div class="vendorRegistrationFormGroup">
+                <label
+                  class="vendorRegistrationLabel"
+                  style="
+                    font-weight: 400;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                  "
+                >
+                  <input type="checkbox" id="vendorBankTerms" />
+                  <span style="font-size: 11px">
+                    I Agree to the terms and conditions *
+                  </span>
+                </label>
+                <span
+                  class="vendorRegistrationErrorText"
+                  id="vendorBankTermsError"
+                ></span>
+              </div>
+
+              <button
+                type="button"
+                class="vendorRegistrationButton"
+                id="vendorRegistrationStep5Register"
+              >
+                Register
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- OTP CARD (hidden by default) -->
+      <div class="vendorOtpCard" id="vendorOtpCard" style="display: none">
+        <div class="vendorOtpLockIcon">
+          <img src="../assets/lock.svg" alt="" />
+        </div>
+
+        <h2 class="vendorOtpTitle">Authenticate Your Account</h2>
+        <p class="vendorOtpSubtitle">
+          Enter the 6-digit code sent to your registered mobile number
+        </p>
+
+        <div class="vendorOtpInputsWrapper">
+          <input
+            type="text"
+            maxlength="1"
+            class="vendorOtpInput"
+            id="vendorOtp1"
+          />
+          <input
+            type="text"
+            maxlength="1"
+            class="vendorOtpInput"
+            id="vendorOtp2"
+          />
+          <input
+            type="text"
+            maxlength="1"
+            class="vendorOtpInput"
+            id="vendorOtp3"
+          />
+          <input
+            type="text"
+            maxlength="1"
+            class="vendorOtpInput"
+            id="vendorOtp4"
+          />
+          <input
+            type="text"
+            maxlength="1"
+            class="vendorOtpInput"
+            id="vendorOtp5"
+          />
+          <input
+            type="text"
+            maxlength="1"
+            class="vendorOtpInput"
+            id="vendorOtp6"
+          />
+        </div>
+
+        <div
+          class="vendorRegistrationErrorText"
+          id="vendorOtpError"
+          style="text-align: center; margin-top: 8px"
+        ></div>
+
+        <button class="vendorOtpButton" id="vendorOtpVerifyBtn">
+          Verify &amp; Proceed
+        </button>
+
+        <div class="vendorOtpFooter">
+          <button
+            type="button"
+            class="vendorOtpResend"
+            id="vendorOtpResendBtn"
+            disabled
+          >
+            Resend code
+          </button>
+          <span class="vendorOtpTimer" id="vendorOtpTimer">00:30</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="../javascript/vendorRegistration.js"></script>
+  </body>
+</html>
