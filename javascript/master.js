@@ -1,10 +1,42 @@
 // Navigation Bar Interaction
-const hamburger = document.getElementById("hamburger-menu");
-const menu = document.getElementById("mobile-menu");
+// HAMBURGER OPEN/CLOSE
+const hamburger = document.querySelector(".hamburger-menu");
+const mobileMenu = document.getElementById("mobile-menu");
+const hamberMenuIcon=document.querySelector("#hamburger-menu>img")
 
-hamburger.addEventListener("click", () => {
-    menu.classList.toggle("menu-open");
+hamburger?.addEventListener("click", () => {
+  mobileMenu.classList.toggle("menu-open");
+  // Toggle hamburger icon
+  if (mobileMenu.classList.contains("menu-open")) {
+    hamberMenuIcon.src = "../assets/X.svg";
+  }
+  else {
+    hamberMenuIcon.src = "../assets/List.svg";
+  }
 });
+
+// MOBILE DROPDOWN ACCORDION
+const dropdownItems = document.querySelectorAll(".mobile-dropdown");
+
+dropdownItems.forEach(item => {
+  const header = item.querySelector(".dropdown-header");
+
+  header.addEventListener("click", (e) => {
+    e.stopPropagation(); // important: prevents submenu clicks from toggling
+
+    // Close other dropdowns
+    dropdownItems.forEach(other => {
+      if (other !== item) {
+        other.classList.remove("open");
+      }
+    });
+
+    // Toggle current
+    item.classList.toggle("open");
+  });
+});
+
+
 
 
 // Carousel Functionality
