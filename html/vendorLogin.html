@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vendor Login</title>
+    <link rel="stylesheet" href="../css/vendorLogin.css" />
+</head>
+<body>
+
+<div class="vendorLoginPage">
+
+    <!-- LEFT LOGIN BOX -->
+    <div class="vendorLoginLeft">
+
+        <div class="vendorLoginHeader">
+            <h1 class="vendorLoginTitle">Login</h1>
+        </div>
+
+        <p class="vendorLoginSubtitle">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+
+        <form class="vendorLoginForm" id="vendorLoginForm">
+
+            <div class="vendorLoginGroup">
+                <label class="vendorLoginLabel" for="vendorLoginMobile">Username / Mobile Number</label>
+                <input type="text" id="vendorLoginMobile" class="vendorLoginInput" placeholder="95367 89905" maxlength="50" />
+                <span id="vendorLoginMobileError" class="vendorLoginError"></span>
+            </div>
+
+            <div class="vendorLoginGroup">
+                <label class="vendorLoginLabel" for="vendorLoginPassword">Password</label>
+                <input type="password" id="vendorLoginPassword" class="vendorLoginInput" placeholder="Enter Password" />
+                <a href="#" class="vendorLoginForgot">Forgot Password</a>
+                <span id="vendorLoginPasswordError" class="vendorLoginError"></span>
+            </div>
+
+            <button type="submit" class="vendorLoginButton">Login</button>
+
+        </form>
+
+        <!-- SUCCESS MESSAGE -->
+        <div class="vendorLoginSuccessMsg" id="vendorLoginSuccessMsg" style="display:none;">
+            Your account has been created successfully! <br />
+            You can login your account in 24 hours once verified and approved. <br />
+            Credentials will be sent to your registered number.
+            <span class="vendorLoginCloseSuccess" id="vendorLoginCloseSuccess">✕</span>
+        </div>
+
+    </div>
+
+    <!-- RIGHT SIDE BANNER -->
+    <div class="vendorLoginRight">
+
+        <div class="vendorLoginHeroCard">
+            <h2 class="vendorLoginHeroTitle">Get easy <br> EMI loan</h2>
+            <p class="vendorLoginHeroSubtitle">
+                Handcrafted Finds to <br> Elevate Every Corner.
+            </p>
+            <p class="vendorLoginHeroTagline">Hurry up for exclusive collections</p>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../javascript/vendorLogin.js"></script>
+
+</body>
+</html>

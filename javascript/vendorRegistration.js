@@ -479,7 +479,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .addEventListener("click", function () {
       if (!validateOtp()) return;
 
-      window.location.href = "../html/vendorLogin.html"; 
+      window.location.href = "../html/vendorLogin.html?registered=1";
     });
 
   // OTP TIMER + RESEND
