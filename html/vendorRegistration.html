@@ -39,23 +39,49 @@
               class="vendorRegistrationForm"
               id="vendorRegistrationFormStep1"
             >
-              <!-- Full Name -->
-              <div class="vendorRegistrationFormGroup">
-                <label
-                  class="vendorRegistrationLabel"
-                  for="vendorRegistrationFullName"
-                  >Full Name *</label
+              <!-- Row: Full Name + Gender -->
+              <div
+                class="vendorRegistrationRow vendorStep1Row1 vendorStep1Name"
+              >
+                <!-- Full Name -->
+                <div class="vendorRegistrationFormGroup vendorRegistrationHalf">
+                  <label
+                    class="vendorRegistrationLabel"
+                    for="vendorRegistrationFullName"
+                  >
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="vendorRegistrationFullName"
+                    class="vendorRegistrationInput"
+                    placeholder="David John"
+                  />
+                  <span
+                    id="vendorRegistrationFullNameError"
+                    class="vendorRegistrationErrorText"
+                  ></span>
+                </div>
+
+                <!-- Gender -->
+                <div
+                  class="vendorRegistrationFormGroup vendorRegistrationHalf vendorStep1Gender"
                 >
-                <input
-                  type="text"
-                  id="vendorRegistrationFullName"
-                  class="vendorRegistrationInput"
-                  placeholder="David John"
-                />
-                <span
-                  id="vendorRegistrationFullNameError"
-                  class="vendorRegistrationErrorText"
-                ></span>
+                  <label
+                    class="vendorRegistrationLabel"
+                    for="vendorRegistrationGender"
+                  >
+                    Gender
+                  </label>
+                  <select
+                    id="vendorRegistrationGender"
+                    class="vendorRegistrationInput vendorRegistrationSelect"
+                  >
+                    <option value="">Female</option>
+                    <option value="male">Male</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
               </div>
 
               <!-- Mobile Number -->
@@ -63,8 +89,9 @@
                 <label
                   class="vendorRegistrationLabel"
                   for="vendorRegistrationMobile"
-                  >Mobile Number *</label
                 >
+                  Mobile Number *
+                </label>
                 <input
                   type="tel"
                   id="vendorRegistrationMobile"
@@ -99,7 +126,8 @@
                 <label
                   class="vendorRegistrationLabel"
                   for="vendorRegistrationDesignation"
-                  >Designation
+                >
+                  Designation
                 </label>
                 <input
                   type="text"
@@ -109,58 +137,90 @@
                 />
               </div>
 
-              <!-- Gender -->
-              <div class="vendorRegistrationFormGroup">
-                <label
-                  class="vendorRegistrationLabel"
-                  for="vendorRegistrationGender"
+              <!-- Row: Identity Proof + Identity Number -->
+              <div class="vendorRegistrationRow vendorStep1Row2">
+                <!-- Identity Proof -->
+                <div
+                  class="vendorRegistrationFormGroup vendorRegistrationHalf vendorStep1IdProof"
                 >
-                  Gender
-                </label>
-                <select
-                  id="vendorRegistrationGender"
-                  class="vendorRegistrationInput vendorRegistrationSelect"
+                  <label
+                    class="vendorRegistrationLabel"
+                    for="vendorRegistrationIdType"
+                  >
+                    Select the Identity Proof
+                  </label>
+                  <select
+                    id="vendorRegistrationIdType"
+                    class="vendorRegistrationInput vendorRegistrationSelect"
+                  >
+                    <option value="">Aadhar Card</option>
+                    <option value="pan">PAN Card</option>
+                    <option value="voter">Voter ID</option>
+                    <option value="passport">Passport</option>
+                  </select>
+                </div>
+
+                <!-- Identity Number -->
+                <div
+                  class="vendorRegistrationFormGroup vendorRegistrationHalf vendorStep1IdNumber"
                 >
-                  <option value="">Female</option>
-                  <option value="male">Male</option>
-                  <option value="other">Other</option>
-                </select>
+                  <label
+                    class="vendorRegistrationLabel"
+                    for="vendorRegistrationIdNumber"
+                  >
+                    Mention Identity Number
+                  </label>
+                  <input
+                    type="text"
+                    id="vendorRegistrationIdNumber"
+                    class="vendorRegistrationInput"
+                    placeholder="2546 6778 7744 6778"
+                  />
+                </div>
               </div>
 
-              <!-- Identity Proof -->
-              <div class="vendorRegistrationFormGroup">
-                <label
-                  class="vendorRegistrationLabel"
-                  for="vendorRegistrationIdType"
-                >
-                  Select the Identity Proof</label
-                >
-                <select
-                  id="vendorRegistrationIdType"
-                  class="vendorRegistrationInput vendorRegistrationSelect"
-                >
-                  <option value="">Aadhar Card</option>
-                  <option value="pan">PAN Card</option>
-                  <option value="voter">Voter ID</option>
-                  <option value="passport">Passport</option>
-                </select>
-              </div>
+              <!-- Identity Proof Upload (Front + Back) -->
+              <div class="vendorRegistrationUploadWrapper">
+                <label class="vendorRegistrationLabel"> Identity Proof </label>
 
-              <!-- Identity Number -->
-              <div class="vendorRegistrationFormGroup">
-                <label
-                  class="vendorRegistrationLabel"
-                  for="vendorRegistrationIdNumber"
-                >
-                  Mention Identity Number (of the selected identity
-                  proof)</label
-                >
-                <input
-                  type="text"
-                  id="vendorRegistrationIdNumber"
-                  class="vendorRegistrationInput"
-                  placeholder="2546 6778 7744 6778"
-                />
+                <div class="vendorRegistrationRow">
+                  <!-- Front -->
+                  <label
+                    class="vendorRegistrationUploadBox"
+                    for="vendorIdFront"
+                  >
+                    <span class="vendorRegistrationUploadPlus">
+                      <img src="../assets/PlusCircle.svg" alt="" />
+                    </span>
+                    <span class="vendorRegistrationUploadIcon">
+                      <img src="../assets/UploadSimple.svg" alt="" />
+                    </span>
+                    <span>Upload Front</span>
+                    <input
+                      type="file"
+                      id="vendorIdFront"
+                      style="display: none"
+                      accept="image/*,.pdf"
+                    />
+                  </label>
+
+                  <!-- Back -->
+                  <label class="vendorRegistrationUploadBox" for="vendorIdBack">
+                    <span class="vendorRegistrationUploadPlus">
+                      <img src="../assets/PlusCircle.svg" alt="" />
+                    </span>
+                    <span class="vendorRegistrationUploadIcon">
+                      <img src="../assets/UploadSimple.svg" alt="" />
+                    </span>
+                    <span>Upload Front</span>
+                    <input
+                      type="file"
+                      id="vendorIdBack"
+                      style="display: none"
+                      accept="image/*,.pdf"
+                    />
+                  </label>
+                </div>
               </div>
 
               <!-- BUTTON -->
@@ -176,27 +236,6 @@
             class="vendorRegistrationStepContent"
             style="display: none"
           >
-            <div class="vendorRegistrationUploadWrapper">
-              <label class="vendorRegistrationLabel ">
-                Identity Proof (Front/Back)
-              </label>
-              <label class="vendorRegistrationUploadBox" for="vendorIdUpload">
-                <span class="vendorRegistrationUploadPlus"
-                  ><img src="../assets/PlusCircle.svg" alt=""
-                /></span>
-                <span class="vendorRegistrationUploadIcon"
-                  ><img src="../assets/UploadSimple.svg" alt=""
-                /></span>
-                <span>Upload</span>
-                <input
-                  type="file"
-                  id="vendorIdUpload"
-                  style="display: none"
-                  accept="image/*,.pdf"
-                />
-              </label>
-            </div>
-
             <h2 class="vendorRegistrationSectionTitle">Permanent Address</h2>
 
             <form
@@ -204,7 +243,7 @@
               id="vendorRegistrationFormStep2"
             >
               <div class="vendorRegistrationFormGroup">
-                <label class="vendorRegistrationLabel"  
+                <label class="vendorRegistrationLabel"
                   >House No/ Society *</label
                 >
                 <input
@@ -245,8 +284,8 @@
                 />
               </div>
 
-              <div class="vendorRegistrationRow">
-                <div class="vendorRegistrationFormGroup vendorRegistrationHalf">
+              <div class="vendorRegistrationRow vendorStep2RowCityZip">
+                <div class="vendorRegistrationFormGroup vendorRegistrationHalf vendorStep2City">
                   <label class="vendorRegistrationLabel">City *</label>
                   <input
                     type="text"
@@ -260,7 +299,7 @@
                   ></span>
                 </div>
 
-                <div class="vendorRegistrationFormGroup vendorRegistrationHalf">
+                <div class="vendorRegistrationFormGroup vendorRegistrationHalf vendorStep2Zip">
                   <label class="vendorRegistrationLabel">Zipcode *</label>
                   <input
                     type="text"
@@ -382,8 +421,12 @@
                   class="vendorRegistrationUploadBox"
                   for="vendorBusinessLogo"
                 >
-                  <span class="vendorRegistrationUploadPlus"><img src="../assets/PlusCircle.svg" alt=""></span>
-                  <span class="vendorRegistrationUploadIcon"><img src="../assets/UploadSimple.svg" alt=""></span>
+                  <span class="vendorRegistrationUploadPlus"
+                    ><img src="../assets/PlusCircle.svg" alt=""
+                  /></span>
+                  <span class="vendorRegistrationUploadIcon"
+                    ><img src="../assets/UploadSimple.svg" alt=""
+                  /></span>
                   <span>Upload</span>
                   <input
                     type="file"
@@ -479,7 +522,7 @@
               <!-- City + Zip -->
               <div class="vendorRegistrationRow">
                 <div class="vendorRegistrationFormGroup vendorRegistrationHalf">
-                  <label class="vendorRegistrationLabel ">City *</label>
+                  <label class="vendorRegistrationLabel">City *</label>
                   <input
                     type="text"
                     id="shippingCity"

@@ -33,8 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (label) label.classList.add("error");
   }
 
-
-//   CLEAR ERROR
+  //   CLEAR ERROR
   function clearError(input, errorId) {
     const group = input.closest(".vendorRegistrationFormGroup");
     const label = group.querySelector(".vendorRegistrationLabel");
@@ -49,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (label) label.classList.remove("error");
   }
 
-//   Validate Name Function
+  //   Validate Name Function
   function validateName() {
     const value = fullNameInput.value.trim();
     let error = "";
@@ -73,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return true;
     }
   }
-// Mobile Validation Function
+  // Mobile Validation Function
   function validateMobile() {
     let value = mobileInput.value.replace(/\D/g, "");
     mobileInput.value = value;
@@ -99,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Remove Non-digit form Mobile Input  
+  // Remove Non-digit form Mobile Input
   mobileInput.addEventListener("input", function () {
     this.value = this.value.replace(/\D/g, "");
   });
@@ -120,8 +119,8 @@ document.addEventListener("DOMContentLoaded", function () {
       setStep(1); // second dot green
     }
   });
- 
-// Validatation for 2nd Step
+
+  // Validatation for 2nd Step
   function validateStep2() {
     let valid = true;
 
@@ -172,14 +171,16 @@ document.addEventListener("DOMContentLoaded", function () {
     return valid;
   }
 
-// Step 2 -> STEP 3 
-  document.getElementById("vendorRegistrationStep2Continue").addEventListener("click", function () {
+  // Step 2 -> STEP 3
+  document
+    .getElementById("vendorRegistrationStep2Continue")
+    .addEventListener("click", function () {
       if (!validateStep2()) return;
-    document.getElementById("vendorRegistrationStep2").style.display = "none";
-      document.getElementById("vendorRegistrationStep3").style.display ="block";
-     setStep(2);
+      document.getElementById("vendorRegistrationStep2").style.display = "none";
+      document.getElementById("vendorRegistrationStep3").style.display =
+        "block";
+      setStep(2);
     });
-
 
   // STEP 3 VALIDATION
 
@@ -238,18 +239,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // STEP 3 -> STEP 4
   document
-    .getElementById("vendorRegistrationStep3Continue").addEventListener("click", function () {
+    .getElementById("vendorRegistrationStep3Continue")
+    .addEventListener("click", function () {
       if (!validateStep3()) return;
 
       document.getElementById("vendorRegistrationStep3").style.display = "none";
-      document.getElementById("vendorRegistrationStep4").style.display ="block";
+      document.getElementById("vendorRegistrationStep4").style.display =
+        "block";
 
-      setStep(3); 
+      setStep(3);
     });
 
- 
   // STEP 4 VALIDATION
- 
+
   function validateStep4() {
     let valid = true;
 
@@ -301,7 +303,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   document
-    .getElementById("shippingSameAsPermanent").addEventListener("change", function () {
+    .getElementById("shippingSameAsPermanent")
+    .addEventListener("change", function () {
       if (this.checked) {
         shippingHouse.value = vendorAddressHouse.value;
         shippingArea.value = vendorAddressArea.value;
@@ -313,15 +316,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   // STEP 4 -> STEP 5
-  document.getElementById("vendorRegistrationStep4Continue").addEventListener("click", function () {
+  document
+    .getElementById("vendorRegistrationStep4Continue")
+    .addEventListener("click", function () {
       if (!validateStep4()) return;
 
       document.getElementById("vendorRegistrationStep4").style.display = "none";
-      document.getElementById("vendorRegistrationStep5").style.display = "block";
+      document.getElementById("vendorRegistrationStep5").style.display =
+        "block";
 
       setStep(4);
     });
-
 
   // STEP 5 VALIDATION
 
@@ -401,7 +406,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // STEP 5 -> SHOW OTP SCREEN
   document
-    .getElementById("vendorRegistrationStep5Register").addEventListener("click", function () {
+    .getElementById("vendorRegistrationStep5Register")
+    .addEventListener("click", function () {
       if (!validateStep5()) return;
 
       // registration form card hide
@@ -447,15 +453,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const otp = getOtpValue();
     const error = document.getElementById("vendorOtpError");
 
+    const DUMMY_OTP = "123456";
+
+    let message = "";
+
     if (otp.length !== 6) {
-      error.textContent = "Please enter 6-digit OTP";
-      error.style.display = "block";
-      return false;
+      message = "Please enter 6-digit OTP";
+    } else if (otp !== DUMMY_OTP) {
+      message = "Invalid OTP. Please try again.";
     }
 
-    error.textContent = "";
-    error.style.display = "none";
-    return true;
+    if (message) {
+      error.textContent = message;
+      error.style.display = "block";
+      return false;
+    } else {
+      error.textContent = "";
+      error.style.display = "none";
+      return true;
+    }
   }
 
   document
@@ -463,10 +479,8 @@ document.addEventListener("DOMContentLoaded", function () {
     .addEventListener("click", function () {
       if (!validateOtp()) return;
 
-
-      alert("OTP verified! Account authenticated ✅");
+      window.location.href = "../html/vendorLogin.html"; 
     });
-
 
   // OTP TIMER + RESEND
 
@@ -498,7 +512,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // resend click
-  document.getElementById("vendorOtpResendBtn").addEventListener("click", function () {
-      startOtpTimer(); 
+  document
+    .getElementById("vendorOtpResendBtn")
+    .addEventListener("click", function () {
+      startOtpTimer();
     });
 });
