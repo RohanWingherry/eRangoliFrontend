@@ -1,291 +1,290 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
 }
 
 body {
-    background: #c7d6bd;
+  background: #c7d6bd;
 }
 
 /* MAIN WRAPPER */
 .vendorLoginPage {
-    background: white;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    border-radius: 8px;
-    overflow: hidden;
+  background: white;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 /* LEFT PANEL */
 .vendorLoginLeft {
-    width: 40%;
-    background: #f8f4f1;
-    position: relative;
+  width: 40%;
+  background: #f8f4f1;
+  position: relative;
 }
 
 .vendorLoginHeader {
-    width: 100%;
-    height: 100px;
-    background-image: url("../assets/loginbg.svg");
-    background-color: rgba(255, 0, 0, 0.112);
-    background-size: cover;
-    background-position: center;
-    border-radius: 6px;
-    text-align: center;
-    padding-top: 30px;
+  width: 100%;
+  height: 100px;
+  background-image: url("../assets/loginbg.svg");
+  background-color: rgba(255, 0, 0, 0.112);
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  text-align: center;
+  padding-top: 30px;
 }
 
 .vendorLoginTitle {
-    color: #A10404;
-    font-size: 35px;
-    font-weight: 700;
+  color: #a10404;
+  font-size: 35px;
+  font-weight: 700;
 }
 
 .vendorLoginSubtitle {
-    margin-top: 25px;
-    padding: 0 80px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: 600;
-    color: #3F3F3F;
-    line-height: 1.4;
+  margin-top: 25px;
+  padding: 0 80px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: #3f3f3f;
+  line-height: 1.4;
 }
 
 .vendorLoginForm {
-    margin-top: 50px;
-    padding: 0 80px;
+  margin-top: 50px;
+  padding: 0 80px;
 }
 
 .vendorLoginGroup {
-    margin-bottom: 20px;
-    position: relative;
+  margin-bottom: 20px;
+  position: relative;
 }
 
 .vendorLoginLabel {
-    font-size: 14px;
-    font-weight: 600;
-    color: #3f3f3f;
-    margin-bottom: 5px;
-    display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #3f3f3f;
+  margin-bottom: 5px;
+  display: block;
 }
 
 .vendorLoginInput {
-    width: 100%;
-    padding: 12px 13px;
-    border: 1px solid #DEE1E6;
-    border-radius: 4px;
-    font-size: 15px;
-    background: white;
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid #dee1e6;
+  border-radius: 4px;
+  font-size: 15px;
+  background: white;
 }
 
 .vendorLoginInput:focus {
-    border-color: #A10404;
-    outline: none;
+  border-color: #a10404;
+  outline: none;
 }
 
 .vendorLoginForgot {
-    font-size: 11px;
-    color: #0250D9;
-    position: absolute;
-    top: 65px;
-    right: 0;
-    margin-top: 5px;
-    cursor: pointer;
-    text-decoration: none;
+  font-size: 11px;
+  color: #0250d9;
+  position: absolute;
+  top: 65px;
+  right: 0;
+  margin-top: 5px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .vendorLoginButton {
-    width: 100%;
-    margin-top: 10px;
-    padding: 12px;
-    background: #A10404;
-    border-radius: 5px;
-    border: none;
-    font-size: 16px;
-    color: white;
-    font-weight: 700;
-    cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  background: #a10404;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 /* SUCCESS BOX */
 .vendorLoginSuccessMsg {
-    background: #d9f3dc;
-    color: #009605;
-    margin: 40px 20px;
-    padding: 10px;
-    border-radius: 6px;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 400;
-    position: relative;
+  background: #d9f3dc;
+  color: #009605;
+  margin: 40px 20px;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  position: relative;
 }
 
 .vendorLoginCloseSuccess {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
 }
 
 /* ERROR TEXT */
 .vendorLoginError {
-    font-size: 12px;
-    color: #FA0A0A;
-    margin-top: 4px;
-    display: none;
+  font-size: 12px;
+  color: #fa0a0a;
+  margin-top: 4px;
+  display: none;
 }
 
 /* RIGHT PANEL */
 .vendorLoginRight {
-    width: 60%;
-    background-image: url("../assets/loginbackground.svg");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
+  width: 60%;
+  background-image: url("../assets/loginbackground.svg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
 }
 
 .vendorLoginHeroCard {
-    background: #bca4a41d;
-    border: 1px solid #A104044F;
-    border-radius: 8px;
-    padding: 40px 60px;
-    width: 430px;
-    text-align: center;
+  background: #bca4a41d;
+  border-radius: 8px;
+  padding: 40px 60px;
+  width: 430px;
+  text-align: center;
 }
 
 .vendorLoginHeroTitle {
-    font-size: 65px;
-    font-weight: 700;
-    line-height: 1.1;
-    color: #ffca24;
+  font-size: 65px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #ffca24;
 }
 
 .vendorLoginHeroSubtitle {
-    font-size: 28px;
-    font-weight: 700;
-    color: #fff;
-    margin-top: 20px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 20px;
 }
 
 .vendorLoginHeroTagline {
-    color: #fff;
-    margin-top: 15px;
-    font-size: 14px;
-    font-weight: 500;
+  color: #fff;
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /* RESET PASSWORD PAGE */
 .vendorResetPage {
-    position: fixed;
-    inset: 0;
-    display: none;           
-    align-items: center;
-    justify-content: center;
-    background-image: url("../assets/loginbackground.svg"); 
-    background-size: cover;
-    background-position: center;
-    z-index: 50;
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../assets/loginbackground.svg");
+  background-size: cover;
+  background-position: center;
+  z-index: 50;
 }
-#vendorLoginResetSuccess{
-    margin: 40px 80px;
+#vendorLoginResetSuccess {
+  margin: 40px 80px;
 }
 
 /* white card in center */
 .vendorResetCard {
-    width: 480px;
-    max-width: 95%;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.18);
-    padding: 40px 50px 10px;
-    text-align: center;
+  width: 480px;
+  max-width: 95%;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+  padding: 40px 50px 10px;
+  text-align: center;
 }
 
 .vendorResetTitle {
-    font-size: 28px;
-    font-weight: 700;
-    color: #3f3f3f;
-    margin-bottom: 8px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #3f3f3f;
+  margin-bottom: 8px;
 }
 
 .vendorResetText {
-    font-size: 12px;
-    color: #777;
-    line-height: 1.4;
-    margin-bottom: 30px;
+  font-size: 12px;
+  color: #777;
+  line-height: 1.4;
+  margin-bottom: 30px;
 }
 
 .vendorResetGroup {
-    text-align: left;
-    margin-bottom: 20px;
+  text-align: left;
+  margin-bottom: 20px;
 }
 
 .vendorResetLabel {
-    font-size: 13px;
-    font-weight: 600;
-    color: #3f3f3f;
-    margin-bottom: 6px;
-    display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #3f3f3f;
+  margin-bottom: 6px;
+  display: block;
 }
 
 .vendorResetInput {
-    width: 100%;
-    padding: 10px 12px;
-    border-radius: 4px;
-    border: 1px solid #DEE1E6;
-    font-size: 14px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid #dee1e6;
+  font-size: 14px;
 }
 
 .vendorResetInput:focus {
-    outline: none;
-    border-color: #A10404;
+  outline: none;
+  border-color: #a10404;
 }
 
 .vendorResetButton {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
-    background: #A10404;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-bottom: 15px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  background: #a10404;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 15px;
 }
 
 .vendorResetBack {
-    display: inline-block;
-    font-size: 11px;
-    color: #0250D9;
-    text-decoration: none;
-    margin-top: 40px;
+  display: inline-block;
+  font-size: 11px;
+  color: #0250d9;
+  text-decoration: none;
+  margin-top: 40px;
 }
 
-
 /* RESPONSIVE */
-@media (max-width:900px) {
-    .vendorLoginPage {
-        flex-direction: column;
-        height: auto;
-    }
+@media (max-width: 900px) {
+  .vendorLoginPage {
+    flex-direction: column;
+    height: auto;
+  }
 
-    .vendorLoginLeft,
-    .vendorLoginRight {
-        width: 100%;
-    }
+  .vendorLoginLeft,
+  .vendorLoginRight {
+    width: 100%;
+  }
 
-    .vendorLoginRight {
-        height: 350px;
-    }
+  .vendorLoginRight {
+    height: 350px;
+  }
 
-    .vendorLoginHeroCard {
-        width: 95%;
-    }
+  .vendorLoginHeroCard {
+    width: 95%;
+  }
 }
